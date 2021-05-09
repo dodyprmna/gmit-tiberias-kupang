@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `artikel`
+--
+
+DROP TABLE IF EXISTS `artikel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `artikel` (
+  `id_artikel` int NOT NULL AUTO_INCREMENT,
+  `judul_artike` varchar(100) DEFAULT NULL,
+  `isi_artikel` text,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int DEFAULT NULL,
+  PRIMARY KEY (`id_artikel`),
+  KEY `artikel_FK` (`id_user`),
+  CONSTRAINT `artikel_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `artikel`
+--
+
+LOCK TABLES `artikel` WRITE;
+/*!40000 ALTER TABLE `artikel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `artikel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `berita`
 --
 
@@ -94,7 +122,7 @@ CREATE TABLE `jadwal_ibadah` (
   KEY `jadwal_ibdah_FK_1` (`id_kategori`),
   CONSTRAINT `jadwal_ibdah_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
   CONSTRAINT `jadwal_ibdah_FK_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +131,7 @@ CREATE TABLE `jadwal_ibadah` (
 
 LOCK TABLES `jadwal_ibadah` WRITE;
 /*!40000 ALTER TABLE `jadwal_ibadah` DISABLE KEYS */;
-INSERT INTO `jadwal_ibadah` VALUES (1,1,'BB',1,'2021-05-13','07:00:00','10:00:00','2021-05-09 00:48:54',NULL),(2,NULL,'CTT',0,'2021-05-12','00:49:00','00:49:00',NULL,NULL);
+INSERT INTO `jadwal_ibadah` VALUES (1,1,'BB',1,'2021-05-13','07:00:00','10:00:00','2021-05-09 00:48:54',NULL),(2,NULL,'CTT',0,'2021-05-12','00:49:00','00:49:00',NULL,NULL),(3,2,'HOHOH',1,'2021-05-12','08:39:00','12:39:00',NULL,NULL);
 /*!40000 ALTER TABLE `jadwal_ibadah` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,7 +294,7 @@ CREATE TABLE `warta_jemaat` (
   KEY `warta_jemaat_FK_1` (`id_jadwal`),
   CONSTRAINT `warta_jemaat_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
   CONSTRAINT `warta_jemaat_FK_1` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal_ibadah` (`id_jadwal`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -275,6 +303,7 @@ CREATE TABLE `warta_jemaat` (
 
 LOCK TABLES `warta_jemaat` WRITE;
 /*!40000 ALTER TABLE `warta_jemaat` DISABLE KEYS */;
+INSERT INTO `warta_jemaat` VALUES (1,1,'doc1123.pdf',NULL);
 /*!40000 ALTER TABLE `warta_jemaat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,4 +320,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-09 19:56:35
+-- Dump completed on 2021-05-09 23:02:06
