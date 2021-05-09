@@ -84,7 +84,7 @@ $(document).ready(function () {
 		});
 	});
 
-	// ------- update -------
+	// ------- delete -------
 	$(document).on("click", ".btn-delete", function () {
 		var id = $(this).data("id");
 		var ibadah = $(this).data("namaibadah");

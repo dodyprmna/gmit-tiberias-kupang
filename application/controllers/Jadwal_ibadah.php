@@ -103,7 +103,7 @@ class Jadwal_ibadah extends CI_Controller {
     {
         // ambil value dari form inputan
         $id         = $this->input->post('id');
-        $jenis_ibadah   = $this->input->post('jenis_ibadah');
+        $jenis_ibadah   = $this->input->post('jenis_ibadah_update');
         $nama_ibadah    = $this->input->post('nama_ibadah');
         $tanggal        = $this->input->post('tanggal');
         $jam_mulai      = $this->input->post('jam_mulai');
@@ -116,11 +116,8 @@ class Jadwal_ibadah extends CI_Controller {
             'tanggal'       => $tanggal,
             'jam_mulai'     => $jam_mulai,
             'jam_selesai'   => $jam_selesai,
+            'id_kategori'   => (!empty($this->input->post('kategori_update'))) ? $this->input->post('kategori_update') : null
         );
-
-        if(!empty($kategori)){
-            $data['id_kategori'] = $kategori;
-        }
 
         // update data jadwal ibadah
         $update = $this->M_codeigniter->update('jadwal_ibadah', $data ,array('id_jadwal' => $id));
