@@ -34,7 +34,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-					        				<label>File*</label>
+					        				<label>File* (.pdf)</label>
 					        				<input class="form-control" type="file" name="file" accept=".pdf" required>
 					        			</div>
 									</div>
