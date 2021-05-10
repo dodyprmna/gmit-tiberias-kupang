@@ -59,7 +59,7 @@ CREATE TABLE `berita` (
   PRIMARY KEY (`id_berita`),
   KEY `berita_FK` (`id_user`),
   CONSTRAINT `berita_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +95,32 @@ CREATE TABLE `file_artikel` (
 LOCK TABLES `file_artikel` WRITE;
 /*!40000 ALTER TABLE `file_artikel` DISABLE KEYS */;
 /*!40000 ALTER TABLE `file_artikel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `file_berita`
+--
+
+DROP TABLE IF EXISTS `file_berita`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `file_berita` (
+  `id_file` int NOT NULL AUTO_INCREMENT,
+  `id_berita` int DEFAULT NULL,
+  `nama_file` text,
+  PRIMARY KEY (`id_file`),
+  KEY `file_berita_FK` (`id_berita`),
+  CONSTRAINT `file_berita_FK` FOREIGN KEY (`id_berita`) REFERENCES `berita` (`id_berita`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file_berita`
+--
+
+LOCK TABLES `file_berita` WRITE;
+/*!40000 ALTER TABLE `file_berita` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file_berita` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -329,7 +355,6 @@ CREATE TABLE `warta_jemaat` (
 
 LOCK TABLES `warta_jemaat` WRITE;
 /*!40000 ALTER TABLE `warta_jemaat` DISABLE KEYS */;
-INSERT INTO `warta_jemaat` VALUES (1,1,'doc1123.pdf',NULL);
 /*!40000 ALTER TABLE `warta_jemaat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -346,4 +371,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10 11:06:17
+-- Dump completed on 2021-05-10 11:52:52
