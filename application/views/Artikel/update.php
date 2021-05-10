@@ -19,6 +19,7 @@
 		<textarea class="form-control" name="isi_artikel" id="isi_artikel" rows="3"><?= $artikel->isi_artikel?></textarea>
 	</div>
 </div>
+<?php if($file):?>
 <div class="col-md-12">
 	<div class="form-group">
 		<label>File</label>
@@ -34,3 +35,4 @@
 		</div>
 	</div>
 </div>
+<?php endif;?>

@@ -127,18 +127,19 @@ class Jadwal_ibadah extends CI_Controller {
 
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Jadwal ibadah berhasil diubah'
+                'pesan'     => 'Jadwal ibadah berhasil diperbarui'
             );
         }else{
             $output = array(
                 'status'    => false,
-                'pesan'     => 'Jadwal ibadah gagal diubah'
+                'pesan'     => 'Jadwal ibadah gagal diperbarui'
             );
         }
         //  echo output dalam bentuk json
         echo json_encode($output);
     }
 
+    // fungsi hapus jadwal ibadah
     public function delete()
     {
         $id = $this->input->post('id');

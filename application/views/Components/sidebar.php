@@ -57,6 +57,12 @@
                         <p>Pengumuman</p>
                     </a>
                 </li>
+                <li class="nav-item <?php if(isset($menu) && $menu == 'berita') echo'active'?>">
+                    <a href="<?= base_url('Berita')?>">
+                        <i class="fas fa-newspaper"></i>
+                        <p>Berita</p>
+                    </a>
+                </li>
                 <li class="nav-item <?php if(isset($menu) && $menu == 'artikel') echo'active'?>">
                     <a href="<?= base_url('Artikel')?>">
                         <i class="fas fa-images"></i>

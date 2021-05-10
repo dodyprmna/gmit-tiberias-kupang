@@ -161,12 +161,12 @@ class Artikel extends CI_Controller {
         if ($update_artikel || $upload) { 
             $output = array(
                 'status' => true,
-                'pesan'  => 'Artikel berhasil diubah' 
+                'pesan'  => 'Artikel berhasil diperbarui' 
             );
         }else{
             $output = array(
                 'status' => false,
-                'pesan'  => 'Artikel gagal diubah' 
+                'pesan'  => 'Artikel gagal diperbarui' 
             );
         }
 
@@ -195,12 +195,12 @@ class Artikel extends CI_Controller {
         if ($delete) {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Pengumuman berhasil dihapus'
+                'pesan'     => 'Artikel berhasil dihapus'
             );
         } else {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Pengumuman gagal dihapus'
+                'pesan'     => 'Artikel gagal dihapus'
             );
         }
 
@@ -231,7 +231,7 @@ class Artikel extends CI_Controller {
             );
         }else{
             $output = array(
-                'status'    => true, 
+                'status'    => false, 
                 'pesan'     => 'File gagal dihapus'
             );
         }

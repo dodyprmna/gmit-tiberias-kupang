@@ -107,12 +107,12 @@ class Pengumuman extends CI_Controller {
         if ($update) {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Pengumuman berhasil diubah'
+                'pesan'     => 'Pengumuman berhasil diperbarui'
             );
         }else{
             $output = array(
                 'status'    => false,
-                'pesan'     => 'Pengumuman gagal diubah'
+                'pesan'     => 'Pengumuman gagal diperbarui'
             );
         }
         //  echo output dalam bentuk json

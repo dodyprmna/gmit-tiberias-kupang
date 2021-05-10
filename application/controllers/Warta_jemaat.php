@@ -152,35 +152,35 @@ class Warta_jemaat extends CI_Controller {
         if ($update) {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Warta jemaat berhasil diubah'
+                'pesan'     => 'Warta jemaat berhasil diperbarui'
             );
         }else{
             $output = array(
                 'status'    => false,
-                'pesan'     => 'Warta jemaat gagal diubah'
+                'pesan'     => 'Warta jemaat gagal diperbarui'
             );
         }
         //  echo output dalam bentuk json
         echo json_encode($output);
     }
 
-    // fungsi hapus pengumuman
+    // fungsi hapus warta jemaat
     public function delete()
     {
         $id = $this->input->post('id');
 
-        // delete pengumuman dari database
-        $delete = $this->M_codeigniter->delete('pengumuman', array('id_pengumuman' => $id));
+        // delete warta jemaat dari database
+        $delete = $this->M_codeigniter->delete('warta_jemaat', array('id_warta' => $id));
 
         if ($delete) {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Pengumuman berhasil dihapus'
+                'pesan'     => 'Warta jemaat berhasil dihapus'
             );
         } else {
             $output = array(
                 'status'    => true, 
-                'pesan'     => 'Pengumuman gagal dihapus'
+                'pesan'     => 'Warta jemaat gagal dihapus'
             );
         }
 
