@@ -16,6 +16,7 @@ class User extends CI_Controller {
             'content'       => 'User/index', 
             'js'            => 'user',
             'menu'          => 'user',
+            'title'         => 'User'
         );
 		$this->load->view('Components/main',$data);
     }
