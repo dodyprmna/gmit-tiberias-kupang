@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `artikel`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `artikel` (
   `id_artikel` int NOT NULL AUTO_INCREMENT,
-  `judul_artike` varchar(100) DEFAULT NULL,
+  `judul_artikel` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `isi_artikel` text,
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_artikel`),
   KEY `artikel_FK` (`id_user`),
   CONSTRAINT `artikel_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +69,32 @@ CREATE TABLE `berita` (
 LOCK TABLES `berita` WRITE;
 /*!40000 ALTER TABLE `berita` DISABLE KEYS */;
 /*!40000 ALTER TABLE `berita` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `file_artikel`
+--
+
+DROP TABLE IF EXISTS `file_artikel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `file_artikel` (
+  `id_file` int NOT NULL AUTO_INCREMENT,
+  `id_artikel` int DEFAULT NULL,
+  `nama_file` text,
+  PRIMARY KEY (`id_file`),
+  KEY `file_artikel_FK` (`id_artikel`),
+  CONSTRAINT `file_artikel_FK` FOREIGN KEY (`id_artikel`) REFERENCES `artikel` (`id_artikel`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file_artikel`
+--
+
+LOCK TABLES `file_artikel` WRITE;
+/*!40000 ALTER TABLE `file_artikel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file_artikel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -218,7 +244,7 @@ CREATE TABLE `pengumuman` (
 
 LOCK TABLES `pengumuman` WRITE;
 /*!40000 ALTER TABLE `pengumuman` DISABLE KEYS */;
-INSERT INTO `pengumuman` VALUES (3,NULL,'Perubahan tanggal','tetetee','2021-05-09 19:44:07');
+INSERT INTO `pengumuman` VALUES (3,NULL,'Perubahan tanggal','tetetee\r\ndds\r\ndsfdsf','2021-05-09 19:44:07');
 /*!40000 ALTER TABLE `pengumuman` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,4 +346,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-09 23:02:06
+-- Dump completed on 2021-05-10 11:06:17
