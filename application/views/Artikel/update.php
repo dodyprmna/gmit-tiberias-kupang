@@ -26,7 +26,7 @@
 		<div class="row">
 			<?php foreach($file as $row):?>
 				<div class="col-4">
-					<div class="card" style="width: 12rem;">
+					<div class="card"">
 						<img class="card-img-top" src="<?= base_url('uploads/artikel/'.$row->nama_file)?>" alt="Card image cap">
 						<button type="button" class="btn btn-danger btn-delete-file"  data-idartikel="<?= $row->id_artikel?>" data-id="<?= $row->id_file?>" data-filename=<?= $row->nama_file?>>Hapus</button>
 					</div>
