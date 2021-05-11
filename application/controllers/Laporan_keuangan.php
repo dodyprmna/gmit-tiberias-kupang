@@ -5,6 +5,7 @@ class Laporan_keuangan extends CI_Controller {
 	public function __construct() {
         Parent::__construct();
         $this->load->model('M_codeigniter');
+        $this->load->model('M_laporan_keuangan');
         // if($this->session->userdata('login') != true){
         //     redirect('Auth');
         // }
@@ -63,8 +64,13 @@ class Laporan_keuangan extends CI_Controller {
     // fungsi untuk menampilkan data laporan keuangan
     public function list_laporan_keuangan()
     {
-        // get data lapora keuangan
-        $data['laporan'] = $this->M_codeigniter->get('laporan_keuangan')->result();
+        // get data laporan
+        $data['laporan']        = $this->M_laporan_keuangan->get_laporan(null, null)->result();
+        $data['pemasukan']      = $this->M_laporan_keuangan->get_pemasukan(null, null)->row();
+        $data['pengeluaran']    = $this->M_laporan_keuangan->get_pengeluaran(null, null)->row();
+        $data['kolekte']        = $this->M_laporan_keuangan->get_kolekte(null, null)->row();
+        $data['perpuluhan']     = $this->M_laporan_keuangan->get_perpuluhan(null, null)->row();
+        $data['nazar']          = $this->M_laporan_keuangan->get_nazar(null, null)->row();
         
         // set output
         $output = $this->load->view('Laporan_keuangan/tabel_laporan_keuangan',$data,true);
@@ -151,6 +157,19 @@ class Laporan_keuangan extends CI_Controller {
         }
 
         //  echo output dalam bentuk json
+        echo json_encode($output);
+    }
+
+    // fungsi untuk pencarian laporan berdasarkan periode
+    public function search()
+    {
+        $tanggal_awal   = $this->input->post('tanggal_awal');
+        $tanggal_akhir  = $this->input->post('tanggal_akhir');
+
+        $data['laporan'] = $this->M_laporan_keuangan->get_by_periode($tanggal_awal, $tanggal_akhir)->result();
+
+        $output = $this->load->view('Laporan_keuangan/tabel_laporan_keuangan',$data, true);
+
         echo json_encode($output);
     }
 }

@@ -120,6 +120,20 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$("#form-search").submit(function (e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: base_url + "Laporan_keuangan/search/",
+			type: "post",
+			dataType: "json",
+			data: $(this).serialize(),
+			success: function (data) {
+				$("#list_data").html(data);
+			},
+		});
+	});
 });
 
 function list() {
@@ -130,9 +144,6 @@ function list() {
 		dataType: "json",
 		success: function (data) {
 			$("#list_data").html(data);
-			$("#tabel_laporan_keuangan").dataTable({
-				stateSave: true,
-			});
 		},
 	});
 }
@@ -143,7 +154,7 @@ function get_kategori() {
 
 	if (id == 0) {
 		html +=
-			"<option value='1'>Kolekta</option><option value='2'>Perpuluhan</option><option value='3'>Nazar</option><option value='4'>Lain-lain</option>";
+			"<option value='1'>Kolekte</option><option value='2'>Perpuluhan</option><option value='3'>Nazar</option><option value='4'>Lain-lain</option>";
 	} else {
 		html += "<option value='4'>Lain-lain</option>";
 	}

@@ -4,6 +4,36 @@
 	</div>
 
 	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body">
+					<form id="form-search" method="post">
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label>Tanggal Awal</label>
+									<input class="form-control" name="tanggal_awal" type="date" required>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label>Tanggal Akhir</label>
+									<input class="form-control" name="tanggal_akhir" type="date" required>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-group">
+									<button class="btn btn-primary btn-md" type="submit" style="width: 100%"><i class="fa fa-search"></i> Cari</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="col-md-12 panel_add" style="display: none">
 			<div class="card">
 				<div class="card-header">

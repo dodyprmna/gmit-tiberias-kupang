@@ -42,6 +42,30 @@
 					</td>
 				</tr>
 			<?php endforeach;?>
+				<tr>
+					<td colspan="2"><strong>Kolekte</strong></td>
+					<td colspan="5">Rp. <?= number_format($kolekte->jumlah,2,',','.');?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Perpuluhan</strong></td>
+					<td colspan="5">Rp. <?= number_format($perpuluhan->jumlah,2,',','.');?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Nazar</strong></td>
+					<td colspan="5">Rp. <?= number_format($nazar->jumlah,2,',','.');?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Total Pemasukan</strong></td>
+					<td colspan="5">Rp. <?= number_format($pemasukan->jumlah,2,',','.');?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Total Pengeluaran</strong></td>
+					<td colspan="5">Rp. <?= number_format($pengeluaran->jumlah,2,',','.');?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Total Saldo</strong></td>
+					<td colspan="5">Rp. <?= number_format($pemasukan->jumlah - $pengeluaran->jumlah,2,',','.');?></td>
+				</tr>
 		</tbody>
 	</table>
 </div>
