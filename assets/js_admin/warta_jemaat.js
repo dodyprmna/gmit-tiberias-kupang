@@ -93,7 +93,7 @@ $(document).ready(function () {
 	// ------- delete -------
 	$(document).on("click", ".btn-delete", function () {
 		var id = $(this).data("id");
-		var ibadah = $(this).data("namaibadah");
+		var ibadah = $(this).data("ibadah");
 
 		swal({
 			title: "Apakah anda yakin?",
