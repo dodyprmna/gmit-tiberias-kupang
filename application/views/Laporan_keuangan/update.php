@@ -35,13 +35,13 @@
 <div class="col-md-4">
 	<div class="form-group">
 		<label>Jumlah*</label>
-		<input type="number" min="1" class="form-control" name="jumlah" value="<?= $laporan->jumlah?>" required>
+		<input type="number" min="1" class="form-control" name="jumlah" value="<?= $laporan->jumlah?>" placeholder="Jumlah" required>
 	</div>
 </div>
 <div class="col-md-4">
 	<div class="form-group">
 		<label>Keterangan</label>
-		<textarea class="form-control" name="keterangan" cols="3" rows="3"><?= $laporan->keterangan?></textarea>
+		<textarea class="form-control" name="keterangan" cols="3" rows="3" placeholder="Keterangan"><?= $laporan->keterangan?></textarea>
 	</div>
 </div>
 

@@ -48,13 +48,13 @@
 									<div class="col-md-4">
 										<div class="form-group">
 					        				<label>Jumlah*</label>
-					        				<input type="number" min="1" class="form-control" name="jumlah" required>
+					        				<input type="number" min="1" class="form-control" name="jumlah" placeholder="Jumlah" required>
 					        			</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 					        				<label>Keterangan</label>
-					        				<textarea class="form-control" name="keterangan" cols="3" rows="3"></textarea>
+					        				<textarea class="form-control" name="keterangan" cols="3" rows="3" placeholder="Keterangan"></textarea>
 					        			</div>
 									</div>
 			        			</div>
