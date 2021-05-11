@@ -75,6 +75,12 @@
                         <p>Renungan dan Doa Harian</p>
                     </a>
                 </li>
+                <li class="nav-item <?php if(isset($menu) && $menu == 'laporan_keuangan') echo'active'?>">
+                    <a href="<?= base_url('Laporan_keuangan')?>">
+                        <i class="fas fa-money-check-alt"></i>
+                        <p>Laporan Keuangan</p>
+                    </a>
+                </li>
                 <li class="nav-item <?php if(isset($menu) && $menu == 'member') echo'active'?>">
                     <a href="<?= base_url('Member')?>">
                         <i class="fas fa-users"></i>
