@@ -26,7 +26,7 @@
 				<div class="col-4">
 					<div class="card">
 						<img class="card-img-top" src="<?= base_url('uploads/berita/'.$row->nama_file)?>" alt="Card image cap">
-						<button type="button" class="btn btn-danger btn-delete-file"  data-idberita="<?= $row->id_berita?>" data-id="<?= $row->id_file?>" data-filename=<?= $row->nama_file?>>Hapus</button>
+						<button type="button" class="btn btn-danger btn-sm btn-delete-file"  data-idberita="<?= $row->id_berita?>" data-id="<?= $row->id_file?>" data-filename=<?= $row->nama_file?>>Hapus</button>
 					</div>
 				</div>
 			<?php endforeach;?>
