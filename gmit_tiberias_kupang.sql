@@ -31,7 +31,7 @@ CREATE TABLE `artikel` (
   PRIMARY KEY (`id_artikel`),
   KEY `artikel_FK` (`id_user`),
   CONSTRAINT `artikel_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `artikel` (
 
 LOCK TABLES `artikel` WRITE;
 /*!40000 ALTER TABLE `artikel` DISABLE KEYS */;
+INSERT INTO `artikel` VALUES (20,'Mencegah Penularan Covid-19','1111111111','2021-05-11 08:06:21',NULL),(21,'Mencegah Penularan Covid-19','kjhskjdfdsf','2021-05-11 21:03:15',NULL);
 /*!40000 ALTER TABLE `artikel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +86,7 @@ CREATE TABLE `file_artikel` (
   PRIMARY KEY (`id_file`),
   KEY `file_artikel_FK` (`id_artikel`),
   CONSTRAINT `file_artikel_FK` FOREIGN KEY (`id_artikel`) REFERENCES `artikel` (`id_artikel`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +95,7 @@ CREATE TABLE `file_artikel` (
 
 LOCK TABLES `file_artikel` WRITE;
 /*!40000 ALTER TABLE `file_artikel` DISABLE KEYS */;
+INSERT INTO `file_artikel` VALUES (33,20,'Screenshot_from_2021-05-10_15-34-57.png'),(34,20,'Screenshot_from_2021-04-30_13-46-17.png'),(35,21,'Screenshot_from_2021-05-10_15-34-571.png'),(36,21,'Screenshot_from_2021-04-30_13-46-171.png'),(37,21,'Screenshot_from_2021-04-30_13-23-35.png');
 /*!40000 ALTER TABLE `file_artikel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,6 +135,7 @@ DROP TABLE IF EXISTS `informasi_gereja`;
 CREATE TABLE `informasi_gereja` (
   `id_informasi_gereja` int NOT NULL AUTO_INCREMENT,
   `id_user` int DEFAULT NULL,
+  `nama_gereja` varchar(100) DEFAULT NULL,
   `alamat_gereja` varchar(200) DEFAULT NULL,
   `tentang_kami` text,
   `pelayanan_gereja` text,
@@ -140,7 +143,7 @@ CREATE TABLE `informasi_gereja` (
   PRIMARY KEY (`id_informasi_gereja`),
   KEY `informasi_gereja_FK` (`id_user`),
   CONSTRAINT `informasi_gereja_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,6 +152,7 @@ CREATE TABLE `informasi_gereja` (
 
 LOCK TABLES `informasi_gereja` WRITE;
 /*!40000 ALTER TABLE `informasi_gereja` DISABLE KEYS */;
+INSERT INTO `informasi_gereja` VALUES (2,NULL,'GMIT Tiberias Kupang','Kupang,\r\nNusa Tenggara Timur,\r\nIndonesia','jskjs\r\njdsfjds\r\njhdsfkjdfs\r\njndsfldsf','kkkkkkk\r\nlllllllll\r\nppppppppp\r\nooooooo','085555');
 /*!40000 ALTER TABLE `informasi_gereja` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,7 +187,7 @@ CREATE TABLE `jadwal_ibadah` (
 
 LOCK TABLES `jadwal_ibadah` WRITE;
 /*!40000 ALTER TABLE `jadwal_ibadah` DISABLE KEYS */;
-INSERT INTO `jadwal_ibadah` VALUES (1,1,'BB',1,'2021-05-13','07:00:00','10:00:00','2021-05-09 00:48:54',NULL),(2,NULL,'CTT',0,'2021-05-12','00:49:00','00:49:00',NULL,NULL),(3,2,'HOHOH',1,'2021-05-12','08:39:00','12:39:00',NULL,NULL);
+INSERT INTO `jadwal_ibadah` VALUES (1,1,'BB',1,'2021-05-13','07:00:00','10:00:00','2021-05-09 00:48:54',NULL),(2,NULL,'CTT',0,'2021-05-12','00:49:00','00:49:00',NULL,NULL),(3,2,'HOHOH',1,'2021-05-12','08:39:00','12:39:00','2021-05-11 11:34:50',NULL);
 /*!40000 ALTER TABLE `jadwal_ibadah` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,6 +220,31 @@ INSERT INTO `kategori` VALUES (1,'Pemuda',NULL,NULL),(2,'PAR',NULL,NULL),(3,'Kau
 UNLOCK TABLES;
 
 --
+-- Table structure for table `kategori_keuangan`
+--
+
+DROP TABLE IF EXISTS `kategori_keuangan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `kategori_keuangan` (
+  `id_kategori_keuangan` int NOT NULL AUTO_INCREMENT,
+  `nama_kategori` varchar(100) DEFAULT NULL,
+  `jenis` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_kategori_keuangan`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `kategori_keuangan`
+--
+
+LOCK TABLES `kategori_keuangan` WRITE;
+/*!40000 ALTER TABLE `kategori_keuangan` DISABLE KEYS */;
+INSERT INTO `kategori_keuangan` VALUES (1,'Kolekta',0),(2,'Perpuluhan',0),(3,'Nazar',0),(4,'Lain-Lain',0);
+/*!40000 ALTER TABLE `kategori_keuangan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `laporan_keuangan`
 --
 
@@ -225,15 +254,17 @@ DROP TABLE IF EXISTS `laporan_keuangan`;
 CREATE TABLE `laporan_keuangan` (
   `id_laporan` int NOT NULL AUTO_INCREMENT,
   `id_user` int DEFAULT NULL,
-  `id_jenis_pemasukan` int DEFAULT NULL,
   `jenis_transaksi` tinyint(1) DEFAULT NULL,
+  `kategori` int DEFAULT NULL,
   `jumlah` int DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
+  `keterangan` text,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_laporan`),
   KEY `laporan_keuangan_FK` (`id_user`),
-  KEY `laporan_keuangan_FK_1` (`id_jenis_pemasukan`),
+  KEY `laporan_keuangan_FK_1` (`kategori`),
   CONSTRAINT `laporan_keuangan_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -242,7 +273,39 @@ CREATE TABLE `laporan_keuangan` (
 
 LOCK TABLES `laporan_keuangan` WRITE;
 /*!40000 ALTER TABLE `laporan_keuangan` DISABLE KEYS */;
+INSERT INTO `laporan_keuangan` VALUES (1,NULL,0,3,1000000,'2021-05-13','','2021-05-11 15:06:50'),(3,NULL,1,4,300000,'2021-05-09','pembelian karpet','2021-05-11 23:12:23');
 /*!40000 ALTER TABLE `laporan_keuangan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `liturgi`
+--
+
+DROP TABLE IF EXISTS `liturgi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `liturgi` (
+  `id_liturgi` int NOT NULL AUTO_INCREMENT,
+  `file` text,
+  `id_jadwal` int DEFAULT NULL,
+  `id_user` int DEFAULT NULL,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_liturgi`),
+  KEY `liturgi_FK` (`id_jadwal`),
+  KEY `liturgi_FK_1` (`id_user`),
+  CONSTRAINT `liturgi_FK` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal_ibadah` (`id_jadwal`),
+  CONSTRAINT `liturgi_FK_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `liturgi`
+--
+
+LOCK TABLES `liturgi` WRITE;
+/*!40000 ALTER TABLE `liturgi` DISABLE KEYS */;
+INSERT INTO `liturgi` VALUES (3,'doc11234.pdf',1,NULL,'2021-05-13 23:29:37');
+/*!40000 ALTER TABLE `liturgi` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -301,6 +364,33 @@ LOCK TABLES `registrasi_member` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `renungan_dan_doa_harian`
+--
+
+DROP TABLE IF EXISTS `renungan_dan_doa_harian`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `renungan_dan_doa_harian` (
+  `id_renungan_dan_doa` int NOT NULL AUTO_INCREMENT,
+  `isi` text,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int DEFAULT NULL,
+  PRIMARY KEY (`id_renungan_dan_doa`),
+  KEY `renungan_dan_doa_harian_FK` (`id_user`),
+  CONSTRAINT `renungan_dan_doa_harian_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `renungan_dan_doa_harian`
+--
+
+LOCK TABLES `renungan_dan_doa_harian` WRITE;
+/*!40000 ALTER TABLE `renungan_dan_doa_harian` DISABLE KEYS */;
+/*!40000 ALTER TABLE `renungan_dan_doa_harian` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -346,7 +436,7 @@ CREATE TABLE `warta_jemaat` (
   KEY `warta_jemaat_FK_1` (`id_jadwal`),
   CONSTRAINT `warta_jemaat_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
   CONSTRAINT `warta_jemaat_FK_1` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal_ibadah` (`id_jadwal`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,6 +445,7 @@ CREATE TABLE `warta_jemaat` (
 
 LOCK TABLES `warta_jemaat` WRITE;
 /*!40000 ALTER TABLE `warta_jemaat` DISABLE KEYS */;
+INSERT INTO `warta_jemaat` VALUES (2,1,'test.pdf',NULL);
 /*!40000 ALTER TABLE `warta_jemaat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,4 +462,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10 11:52:52
+-- Dump completed on 2021-05-14  0:59:27
