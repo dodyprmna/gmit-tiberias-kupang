@@ -124,8 +124,8 @@
                         <p>User</p>
                     </a>
                 </li>
-                <li class="nav-item <?php if(isset($menu) && $menu == 'profil_gereja') echo'active'?>">
-                    <a href="<?= base_url('Profil_gereja')?>">
+                <li class="nav-item <?php if(isset($menu) && $menu == 'profile_gereja') echo'active'?>">
+                    <a href="<?= base_url('Profile_gereja')?>">
                         <i class="fas fa-info"></i>
                         <p>Profil Gereja</p>
                     </a>
