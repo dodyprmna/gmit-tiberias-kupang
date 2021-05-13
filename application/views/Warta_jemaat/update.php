@@ -25,7 +25,7 @@
 <?php endif;?>
 
 <script>
-	$('.select2').select22({
+	$('.select22').select2({
 		theme: 'bootstrap4',
 		width : '100%',
 	});
