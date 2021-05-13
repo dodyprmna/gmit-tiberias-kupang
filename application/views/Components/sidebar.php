@@ -33,6 +33,37 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                <li class="nav-item <?php if($menu == 'jemaat_baru' || $menu == 'sakramen_baptisan' || $menu == 'katekasasi_dan_pernikahan' || $menu == 'peserta_didik_baru') echo'active'?>">
+                    <a data-toggle="collapse" href="#administrasi" class="collapsed" aria-expanded="false">
+                        <i class="fas fa-book"></i>
+                        <p>Administrasi</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="administrasi">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="">
+                                    <span class="sub-item">Jemaat Baru</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="sub-item">Sakramen Baptisan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="sub-item">Katekasasi dan Pernikahan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="sub-item">Peserta Didik Baru</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item <?php if(isset($menu) && $menu == 'jadwal_ibadah') echo'active'?>">
                     <a href="<?= base_url('Jadwal_ibadah')?>">
                         <i class="fas fa-calendar"></i>
@@ -69,8 +100,8 @@
                         <p>Artikel</p>
                     </a>
                 </li>
-                <li class="nav-item <?php if(isset($menu) && $menu == 'renungan_dan_doa') echo'active'?>">
-                    <a href="<?= base_url('Renungan_dan_doa')?>">
+                <li class="nav-item <?php if(isset($menu) && $menu == 'renungan_dan_doa_harian') echo'active'?>">
+                    <a href="<?= base_url('Renungan_dan_doa_harian')?>">
                         <i class="fas fa-church"></i>
                         <p>Renungan dan Doa Harian</p>
                     </a>
