@@ -25,7 +25,7 @@
 					</td>
 					<td align="center">
 						<?php if($row->kategori == 1):?>
-							Kolekta
+							Kolekte
 						<?php elseif($row->kategori == 2):?>
 							Perpuluhan
 						<?php elseif($row->kategori == 3):?>
