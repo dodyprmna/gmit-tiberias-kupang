@@ -33,32 +33,22 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item <?php if($menu == 'jemaat_baru' || $menu == 'sakramen_baptisan' || $menu == 'katekasasi_dan_pernikahan' || $menu == 'peserta_didik_baru') echo'active'?>">
+                <li class="nav-item <?= ($menu == 'administrasi') ? 'active' : ''?>">
                     <a data-toggle="collapse" href="#administrasi" class="collapsed" aria-expanded="false">
                         <i class="fas fa-book"></i>
                         <p>Administrasi</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="administrasi">
+                    <div class="collapse <?= ($menu == 'administrasi') ? 'show' : ''?>" id="administrasi">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="">
-                                    <span class="sub-item">Jemaat Baru</span>
+                            <li <?= (isset($submenu) && $submenu == 'baptisan') ? "class='active'" : ""?>>
+                                <a href="<?= base_url('Baptisan')?>">
+                                    <span class="sub-item">Baptisan</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="">
-                                    <span class="sub-item">Sakramen Baptisan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="sub-item">Katekasasi dan Pernikahan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="sub-item">Peserta Didik Baru</span>
+                            <li <?= (isset($submenu) && $submenu == 'perkawinan') ? "class='active'" : ""?>>
+                                <a href="<?= base_url('Perkawinan')?>">
+                                    <span class="sub-item">Perkawinan</span>
                                 </a>
                             </li>
                         </ul>
