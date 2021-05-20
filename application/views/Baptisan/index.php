@@ -9,7 +9,7 @@
 				<div class="card-header">
 					<div class="row">
 						<div class="col-md-6">
-							<h4>Form Input Baptisan</h4>
+							<h4>Form Pendaftaran Baptisan</h4>
 						</div>
 						<div class="col-md-6" align="right">
 							<button class="btn btn-primary btn-sm" data-plugin="minimize"><i class="fa fa-minus"></i></button>
