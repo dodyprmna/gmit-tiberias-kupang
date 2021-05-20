@@ -6,24 +6,13 @@
                     <img src="<?= base_url('assets/img/profile.jpg')?>" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
-                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <a data-toggle="collapse" href="#" aria-expanded="true">
                         <span>
-                            <?= $this->session->userdata('nama_user')?>
-                            <span class="user-level"><?= $this->session->userdata('nama_role')?></span>
+                            <span class="user-level"><?= $this->session->userdata('nama_user')?></span>
                             <span class="caret"></span>
                         </span>
                     </a>
                     <div class="clearfix"></div>
-
-                    <div class="collapse in" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                                <a href="<?= base_url('User/form_ubah_password')?>">
-                                    <span class="link-collapse">Ubah Password</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <ul class="nav nav-primary">
