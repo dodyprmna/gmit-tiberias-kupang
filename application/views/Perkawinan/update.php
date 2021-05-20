@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="form-group">
-				<label><i class="fa fa-venus fa-2x" style="color: red;"></i> Data Calon Suami</label>
+				<label><i class="fa fa-mars fa-2x" style="color: red;"></i> Data Calon Suami</label>
 			</div>
 		</div>
 	</div>
