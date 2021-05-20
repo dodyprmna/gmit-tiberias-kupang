@@ -85,10 +85,10 @@ class Baptisan extends CI_Controller {
     {
         $id = $this->input->post('id');
 
-        // get data berita by id
+        // get data baptisan by id
         $data['baptisan']      = $this->M_codeigniter->get_where('baptisan', array('id_baptisan' => $id))->row();
 
-        // set output dan set data berita by id ke dalam form inputan
+        // set output dan set data perkawinan by id ke dalam form inputan
         $output = array(
             'html' => $this->load->view('Baptisan/update',$data,true), 
         );
@@ -144,12 +144,12 @@ class Baptisan extends CI_Controller {
         echo json_encode($output);
     }
 
-    // fungsi hapus berita
+    // fungsi hapus baptisan
     public function delete()
     {
         $id = $this->input->post('id');
 
-        // delete berita dari database
+        // delete baprtisan dari database
         $delete = $this->M_codeigniter->delete('baptisan', array('id_baptisan' => $id));
 
         if ($delete) {
