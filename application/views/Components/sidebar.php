@@ -51,6 +51,16 @@
                                     <span class="sub-item">Perkawinan</span>
                                 </a>
                             </li>
+                            <li <?= (isset($submenu) && $submenu == 'jemaat') ? "class='active'" : ""?>>
+                                <a href="<?= base_url('Jemaat')?>">
+                                    <span class="sub-item">Jemaat</span>
+                                </a>
+                            </li>
+                            <li <?= (isset($submenu) && $submenu == 'taman_kanak_kanak') ? "class='active'" : ""?>>
+                                <a href="<?= base_url('Taman_kanak_kanak')?>">
+                                    <span class="sub-item">Taman Kanak-Kanak</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
