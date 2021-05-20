@@ -6,9 +6,9 @@ class Warta_jemaat extends CI_Controller {
         Parent::__construct();
         $this->load->model('M_codeigniter');
         $this->load->model('M_warta_jemaat');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){
