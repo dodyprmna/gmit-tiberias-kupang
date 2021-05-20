@@ -6,9 +6,9 @@ class Liturgi extends CI_Controller {
         Parent::__construct();
         $this->load->model('M_codeigniter');
         $this->load->model('M_liturgi');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){
@@ -39,7 +39,7 @@ class Liturgi extends CI_Controller {
             $data = array(
                 'id_jadwal'     => $id_jadwal_ibadah,
                 'file'          => $this->upload->data('file_name'),
-                // 'id_user'       => $this->session->user_data('id_user'),
+                'id_user'       => $this->session->user_data('id_user'),
             );  
         }else{
             $output = array(

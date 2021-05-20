@@ -6,9 +6,9 @@ class Artikel extends CI_Controller {
         Parent::__construct();
         $this->load->model('M_codeigniter');
         $this->load->model('M_artikel');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){
@@ -31,7 +31,7 @@ class Artikel extends CI_Controller {
         $data_artikel = array(
             'judul_artikel'     => $judul,
             'isi_artikel'       => $isi,
-            // 'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->user_data('id_user'),
         ); 
 
         $insert_artikel = $this->M_codeigniter->insert_get_id('artikel',$data_artikel);

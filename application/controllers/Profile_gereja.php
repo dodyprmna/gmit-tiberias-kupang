@@ -5,9 +5,9 @@ class Profile_gereja extends CI_Controller {
 	public function __construct() {
         Parent::__construct();
         $this->load->model('M_codeigniter');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){

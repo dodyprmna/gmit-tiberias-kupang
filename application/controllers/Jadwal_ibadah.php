@@ -6,9 +6,9 @@ class Jadwal_ibadah extends CI_Controller {
         Parent::__construct();
         $this->load->model('M_codeigniter');
         $this->load->model('M_jadwal_ibadah');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){
@@ -41,7 +41,7 @@ class Jadwal_ibadah extends CI_Controller {
             'tanggal'       => $tanggal,
             'jam_mulai'     => $jam_mulai,
             'jam_selesai'   => $jam_selesai,
-            // 'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->user_data('id_user'),
         );  
 
         // insert data user ke dataase

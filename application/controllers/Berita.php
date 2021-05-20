@@ -6,9 +6,9 @@ class Berita extends CI_Controller {
         Parent::__construct();
         $this->load->model('M_codeigniter');
         // $this->load->model('M_berita');
-        // if($this->session->userdata('login') != true){
-        //     redirect('Auth');
-        // }
+        if($this->session->userdata('login') != true){
+            redirect('Auth');
+        }
 	}
 
 	public function index(){
@@ -31,7 +31,7 @@ class Berita extends CI_Controller {
         $data_berita = array(
             'judul_berita'     => $judul,
             'isi_berita'       => $isi,
-            // 'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->user_data('id_user'),
         ); 
 
         $insert_berita = $this->M_codeigniter->insert_get_id('berita',$data_berita);
