@@ -45,6 +45,38 @@ INSERT INTO `artikel` VALUES (20,'Mencegah Penularan Covid-19','1111111111','202
 UNLOCK TABLES;
 
 --
+-- Table structure for table `baptisan`
+--
+
+DROP TABLE IF EXISTS `baptisan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `baptisan` (
+  `id_baptisan` int NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) DEFAULT NULL,
+  `tempat_lahir` varchar(100) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  `nama_ayah` varchar(100) DEFAULT NULL,
+  `nama_ibu` varchar(100) DEFAULT NULL,
+  `tanggal_baptis` date DEFAULT NULL,
+  `tempat_baptis` varchar(100) DEFAULT NULL,
+  `oleh` varchar(100) DEFAULT NULL,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_baptisan`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baptisan`
+--
+
+LOCK TABLES `baptisan` WRITE;
+/*!40000 ALTER TABLE `baptisan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baptisan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `berita`
 --
 
@@ -189,6 +221,40 @@ LOCK TABLES `jadwal_ibadah` WRITE;
 /*!40000 ALTER TABLE `jadwal_ibadah` DISABLE KEYS */;
 INSERT INTO `jadwal_ibadah` VALUES (1,1,'BB',1,'2021-05-13','07:00:00','10:00:00','2021-05-09 00:48:54',NULL),(2,NULL,'CTT',0,'2021-05-12','00:49:00','00:49:00',NULL,NULL),(3,2,'HOHOH',1,'2021-05-12','08:39:00','12:39:00','2021-05-11 11:34:50',NULL);
 /*!40000 ALTER TABLE `jadwal_ibadah` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jemaat`
+--
+
+DROP TABLE IF EXISTS `jemaat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jemaat` (
+  `id_jemaat` int NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) DEFAULT NULL,
+  `nik` varchar(17) DEFAULT NULL,
+  `gereja_sebelumnya` varchar(100) DEFAULT NULL,
+  `added_at` datetime DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` text,
+  `rayon` varchar(12) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `role` char(1) DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_jemaat`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jemaat`
+--
+
+LOCK TABLES `jemaat` WRITE;
+/*!40000 ALTER TABLE `jemaat` DISABLE KEYS */;
+INSERT INTO `jemaat` VALUES (1,'Syahril','115151515','Kertajaya',NULL,'syahril@gmail.com','$2y$10$RKMx0gcYKS/inWbBz5rW0ecJTjea3o/bnwRGE.qQx4/G11lCLcOzi','5',1,'1','2021-05-20 23:45:00','Pakis'),(2,'Syahril','55555','Kertajaya',NULL,'syahri@gmail.com','$2y$10$ccdquUlaslf4/aXqNxFTQO.ZJfTYVfA7cEfj.X3TcpmMnjypfGxfi','2',1,'1',NULL,'Surabaya'),(3,'Rafqi','555555','Kertajaya',NULL,'rafqi@gmail.com','$2y$10$G6Ywqdlk.XhMu9ep.wk4VOS1ArnwtkUNllWUac94v5V67WIaPpAjy','2',1,'2',NULL,'Malang'),(4,'Dody Pramana','1111','Kertajaya',NULL,'dodyprmna6@gmail.com','$2y$10$fIQeZ6BAyoRgoFheVJAu6.sYW2Tb3Ug28NFiTiCUxDWSCD4PVQxKq','1',1,'1',NULL,'Surabaya');
+/*!40000 ALTER TABLE `jemaat` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -338,6 +404,62 @@ INSERT INTO `pengumuman` VALUES (3,NULL,'Perubahan tanggal','tetetee\r\ndds\r\nd
 UNLOCK TABLES;
 
 --
+-- Table structure for table `perkawinan`
+--
+
+DROP TABLE IF EXISTS `perkawinan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `perkawinan` (
+  `id_perkawinan` int NOT NULL AUTO_INCREMENT,
+  `nama_calon_istri` varchar(100) DEFAULT NULL,
+  `tempat_lahir_calon_istri` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `tanggal_lahir_calon_istri` date DEFAULT NULL,
+  `alamat_calon_istri` varchar(100) DEFAULT NULL,
+  `telepon_calon_istri` varchar(13) DEFAULT NULL,
+  `agama_calon_istri` varchar(100) DEFAULT NULL,
+  `gereja_calon_istri` varchar(100) DEFAULT NULL,
+  `nama_calon_suami` varchar(100) DEFAULT NULL,
+  `tempat_lahir_calon_suami` varchar(100) DEFAULT NULL,
+  `tanggal_lahir_calon_suami` date DEFAULT NULL,
+  `alamat_calon_suami` varchar(100) DEFAULT NULL,
+  `telepon_calon_suami` varchar(13) DEFAULT NULL,
+  `agama_calon_suami` varchar(100) DEFAULT NULL,
+  `gereja_calon_suami` varchar(100) DEFAULT NULL,
+  `tanggal_pemberkatan` date DEFAULT NULL,
+  `nama_ayah_calon_suami` varchar(100) DEFAULT NULL,
+  `nama_ayah_calon_istri` varchar(100) DEFAULT NULL,
+  `agama_ayah_calon_suami` varchar(100) DEFAULT NULL,
+  `agama_ayah_calon_istri` varchar(100) DEFAULT NULL,
+  `pekerjaan_ayah_calon_suami` varchar(100) DEFAULT NULL,
+  `pekerjaan_ayah_calon_istri` varchar(100) DEFAULT NULL,
+  `alamat_ayah_calon_suami` varchar(100) DEFAULT NULL,
+  `alamat_ayah_calon_istri` varchar(100) DEFAULT NULL,
+  `nama_ibu_calon_suami` varchar(100) DEFAULT NULL,
+  `nama_ibu_calon_istri` varchar(100) DEFAULT NULL,
+  `agama_ibu_calon_suami` varchar(100) DEFAULT NULL,
+  `agama_ibu_calon_istri` varchar(100) DEFAULT NULL,
+  `pekerjaan_ibu_calon_suami` varchar(100) DEFAULT NULL,
+  `pekerjaan_ibu_calon_istri` varchar(100) DEFAULT NULL,
+  `alamat_ibu_calon_suami` varchar(100) DEFAULT NULL,
+  `alamat_ibu_calon_istri` varchar(100) DEFAULT NULL,
+  `gereja` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_perkawinan`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perkawinan`
+--
+
+LOCK TABLES `perkawinan` WRITE;
+/*!40000 ALTER TABLE `perkawinan` DISABLE KEYS */;
+INSERT INTO `perkawinan` VALUES (2,'Elly','Surabaya','1998-02-02','Surabaya','086666','Kristen','Kertajaya','Ahmad','Surabaya','1995-02-02','Surabaya','0858555','Kristen','Kertajaya','2021-06-21','Roni','Iwan','Islam','Islam','Wirausaha','Pegawai Swasta','Surabaya','Surabaya','Naomi','Loli','Hindu','Katolik','Wiraswasta','Ibu Rumah Tangga','Surabaya','Surabaya','Kertajayaa','2021-05-20 21:58:41');
+/*!40000 ALTER TABLE `perkawinan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `registrasi_member`
 --
 
@@ -462,4 +584,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-14  0:59:27
+-- Dump completed on 2021-05-21  0:53:00
