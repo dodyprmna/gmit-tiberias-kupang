@@ -56,8 +56,8 @@ class Perkawinan extends CI_Controller {
         $alamat_ibu_calon_istri     = $this->input->post('alamat_ibu_calon_istri');
         $agama_ibu_calon_istri      = $this->input->post('agama_ibu_calon_istri');
         $pekerjaan_ibu_calon_istri  = $this->input->post('pekerjaan_ibu_calon_istri');
-        $tanggal_penguatan          = $this->input->post('tanggal_penguatan');
-        $paroki                     = $this->input->post('paroki');
+        $tanggal_pemberkatan        = $this->input->post('tanggal_pemberkatan');
+        $gereja                     = $this->input->post('gereja');
 
         $data = array(
             'nama_calon_suami'              => $nama_calon_suami,
@@ -90,8 +90,8 @@ class Perkawinan extends CI_Controller {
             'alamat_ibu_calon_istri'        => $alamat_ibu_calon_istri,
             'agama_ibu_calon_istri'         => $agama_ibu_calon_istri,
             'pekerjaan_ibu_calon_istri'     => $pekerjaan_ibu_calon_istri,
-            'paroki'                        => $paroki,
-            'tanggal_penguatan'             => $tanggal_penguatan,
+            'gereja'                        => $gereja,
+            'tanggal_pemberkatan'           => $tanggal_pemberkatan,
             // 'id_user'                       => $this->session->userdata("id_user")
         ); 
 
@@ -180,8 +180,8 @@ class Perkawinan extends CI_Controller {
         $alamat_ibu_calon_istri     = $this->input->post('alamat_ibu_calon_istri');
         $agama_ibu_calon_istri      = $this->input->post('agama_ibu_calon_istri');
         $pekerjaan_ibu_calon_istri  = $this->input->post('pekerjaan_ibu_calon_istri');
-        $tanggal_penguatan          = $this->input->post('tanggal_penguatan');
-        $paroki                     = $this->input->post('paroki');
+        $tanggal_pemberkatan        = $this->input->post('tanggal_pemberkatan');
+        $gereja                     = $this->input->post('gereja');
 
         $data = array(
             'nama_calon_suami'              => $nama_calon_suami,
@@ -214,8 +214,8 @@ class Perkawinan extends CI_Controller {
             'alamat_ibu_calon_istri'        => $alamat_ibu_calon_istri,
             'agama_ibu_calon_istri'         => $agama_ibu_calon_istri,
             'pekerjaan_ibu_calon_istri'     => $pekerjaan_ibu_calon_istri,
-            'paroki'                        => $paroki,
-            'tanggal_penguatan'             => $tanggal_penguatan,
+            'gereja'                        => $gereja,
+            'tanggal_pemberkatan'           => $tanggal_pemberkatan,
             // 'id_user'                       => $this->session->userdata("id_user")
         ); 
 

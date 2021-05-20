@@ -3,14 +3,14 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Paroki</label>
-				<input type="text" class="form-control" name="paroki" placeholder="Paroki" value="<?= $perkawinan->paroki?>" required>
+				<label>Gereja</label>
+				<input type="text" class="form-control" name="gereja" placeholder="Gereja" value="<?= $perkawinan->gereja?>" required>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Tanggal Penguatan</label>
-				<input type="date" class="form-control" name="tanggal_penguatan" value="<?= $perkawinan->tanggal_penguatan?>" required>
+				<label>Tanggal Pemberkatan</label>
+				<input type="date" class="form-control" name="tanggal_pemberkatan" value="<?= $perkawinan->tanggal_pemberkatan?>" required>
 			</div>
 		</div>
 	</div>
