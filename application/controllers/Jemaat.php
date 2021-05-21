@@ -227,4 +227,64 @@ class Jemaat extends CI_Controller {
         //  echo output dalam bentuk json
         echo json_encode($output);
     }
+
+    public function form_ubah_password()
+    {
+        $data['menu']    = 'ubah_password';
+        $data['js']      = 'jemaat';
+        $data['title']   = 'Ubah Password';
+        $data['content'] = 'Jemaat/ubah_password';
+        $this->load->view('Components/main',$data);
+    }
+
+    public function ubah_password()
+    {
+        $password = $this->input->post('password_baru');
+
+        $data = array(
+            'password' => password_hash($password, PASSWORD_DEFAULT), 
+        );
+
+        $update = $this->M_codeigniter->update('jemaat',$data,array('id_jemaat' => $this->session->userdata('id_user')));
+
+        if ($update) {
+            $output = array(
+                'status' => true, 
+                'pesan'  => 'Password berhasil diubah'
+            );
+        }else{
+            $output = array(
+                'status' => false, 
+                'pesan'  => 'Password gagal diubah'
+            );
+        }
+
+        echo json_encode($output);
+    }
+
+    public function validasi_password()
+    {
+        $old_password = $this->input->post('old_password');
+
+        $user = $this->M_codeigniter->get_where('jemaat',array('id_jemaat' => $this->session->userdata('id_user')));
+
+
+        if ($user->num_rows() > 0) {
+            if(password_verify($old_password, $user->row()->password)){
+                $output = array(
+                    'status' => true,
+                );
+            }else{
+                $output = array(
+                    'status' => false,
+                );
+            }
+        }else{
+            $output = array(
+                'status' => false,
+            );
+        }
+
+        echo json_encode($output);
+    }
 }

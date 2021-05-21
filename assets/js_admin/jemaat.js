@@ -159,6 +159,60 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$(document).on("click", ".btn-cek", function () {
+		var password = $("#old_password").val();
+
+		$.ajax({
+			url: base_url + "Jemaat/validasi_password/",
+			type: "post",
+			dataType: "json",
+			data: { old_password: password },
+			success: function (data) {
+				if (data["status"]) {
+					$("#pass_lama").removeAttr("class");
+					$("#pass_lama").attr("class", "form-group");
+					$("#info").hide();
+					$("#new").show();
+				} else {
+					$("#pass_lama").removeAttr("class");
+					$("#pass_lama").attr("class", "form-group has-error has-feedback");
+					$("#info").show();
+					$("#new").hide();
+				}
+			},
+		});
+	});
+
+	$("#form_ubah_password").submit(function (e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: base_url + "Jemaat/ubah_password/",
+			type: "post",
+			dataType: "json",
+			data: $(this).serialize(),
+			success: function (data) {
+				if (data["status"]) {
+					$("#form_ubah_password")[0].reset();
+					$("#pass_lama").val("");
+					swal({
+						title: data.pesan,
+						icon: "success",
+					});
+					setTimeout(function () {
+						window.location.replace(base_url + "Dashboard");
+					}, 1500);
+					$("#new").hide();
+				} else {
+					swal({
+						title: data.pesan,
+						icon: "error",
+					});
+				}
+			},
+		});
+	});
 });
 
 function list() {
@@ -174,4 +228,21 @@ function list() {
 			});
 		},
 	});
+}
+
+function validasi_pass_baru() {
+	$password_baru = $("#password_baru").val();
+	$repas = $("#validasi_password_baru").val();
+
+	if ($password_baru == $repas) {
+		$("#repas").removeAttr("class");
+		$("#repas").attr("class", "form-group");
+		$("#btn-submit").removeAttr("disabled");
+		$("#info_password_baru").hide();
+	} else {
+		$("#repas").removeAttr("class");
+		$("#repas").attr("class", "form-group has-error has-feedback");
+		$("#info_password_baru").text(" Validasi password tidak sama");
+		$("#btn-submit").attr("disabled", "disabled");
+	}
 }
