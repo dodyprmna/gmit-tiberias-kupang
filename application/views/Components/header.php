@@ -28,8 +28,8 @@
                     <ul class="dropdown-menu dropdown-user animated fadeIn">
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
-                                <a class="dropdown-item" href="<?= base_url('User/form_ubah_password')?>">Ubah Password</a>
-                                <div class="dropdown-divider"></div>
+                                <!-- <a class="dropdown-item" href="<?= base_url('User/form_ubah_password')?>">Ubah Password</a>
+                                <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="<?= base_url('Auth/logout')?>">Logout</a>
                             </li>
                         </div>
