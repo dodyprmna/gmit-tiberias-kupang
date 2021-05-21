@@ -30,7 +30,7 @@ CREATE TABLE `artikel` (
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_artikel`),
   KEY `artikel_FK` (`id_user`),
-  CONSTRAINT `artikel_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  CONSTRAINT `artikel_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +63,10 @@ CREATE TABLE `baptisan` (
   `tempat_baptis` varchar(100) DEFAULT NULL,
   `oleh` varchar(100) DEFAULT NULL,
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_baptisan`)
+  `id_user` int DEFAULT NULL,
+  PRIMARY KEY (`id_baptisan`),
+  KEY `baptisan_FK` (`id_user`),
+  CONSTRAINT `baptisan_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -91,7 +94,7 @@ CREATE TABLE `berita` (
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_berita`),
   KEY `berita_FK` (`id_user`),
-  CONSTRAINT `berita_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  CONSTRAINT `berita_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -173,8 +176,7 @@ CREATE TABLE `informasi_gereja` (
   `pelayanan_gereja` text,
   `kontak` varchar(13) DEFAULT NULL,
   PRIMARY KEY (`id_informasi_gereja`),
-  KEY `informasi_gereja_FK` (`id_user`),
-  CONSTRAINT `informasi_gereja_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  KEY `informasi_gereja_FK` (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -206,9 +208,9 @@ CREATE TABLE `jadwal_ibadah` (
   `deleted_at` datetime DEFAULT NULL,
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_jadwal`),
-  KEY `jadwal_ibdah_FK` (`id_user`),
   KEY `jadwal_ibdah_FK_1` (`id_kategori`),
-  CONSTRAINT `jadwal_ibdah_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  KEY `jadwal_ibadah_FK` (`id_user`),
+  CONSTRAINT `jadwal_ibadah_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`),
   CONSTRAINT `jadwal_ibdah_FK_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -270,8 +272,8 @@ CREATE TABLE `kategori` (
   `id_user` int DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_kategori`),
-  KEY `kategori_FK` (`id_user`),
-  CONSTRAINT `kategori_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  KEY `kategori_FK_1` (`id_user`),
+  CONSTRAINT `kategori_FK_1` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -327,9 +329,9 @@ CREATE TABLE `laporan_keuangan` (
   `keterangan` text,
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_laporan`),
-  KEY `laporan_keuangan_FK` (`id_user`),
   KEY `laporan_keuangan_FK_1` (`kategori`),
-  CONSTRAINT `laporan_keuangan_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  KEY `laporan_keuangan_FK` (`id_user`),
+  CONSTRAINT `laporan_keuangan_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -360,7 +362,7 @@ CREATE TABLE `liturgi` (
   KEY `liturgi_FK` (`id_jadwal`),
   KEY `liturgi_FK_1` (`id_user`),
   CONSTRAINT `liturgi_FK` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal_ibadah` (`id_jadwal`),
-  CONSTRAINT `liturgi_FK_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  CONSTRAINT `liturgi_FK_1` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -389,7 +391,7 @@ CREATE TABLE `pengumuman` (
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pengumuman`),
   KEY `pengumuman_FK` (`id_user`),
-  CONSTRAINT `pengumuman_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  CONSTRAINT `pengumuman_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -445,7 +447,10 @@ CREATE TABLE `perkawinan` (
   `alamat_ibu_calon_istri` varchar(100) DEFAULT NULL,
   `gereja` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_perkawinan`)
+  `id_user` int DEFAULT NULL,
+  PRIMARY KEY (`id_perkawinan`),
+  KEY `perkawinan_FK` (`id_user`),
+  CONSTRAINT `perkawinan_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -455,34 +460,46 @@ CREATE TABLE `perkawinan` (
 
 LOCK TABLES `perkawinan` WRITE;
 /*!40000 ALTER TABLE `perkawinan` DISABLE KEYS */;
-INSERT INTO `perkawinan` VALUES (2,'Elly','Surabaya','1998-02-02','Surabaya','086666','Kristen','Kertajaya','Ahmad','Surabaya','1995-02-02','Surabaya','0858555','Kristen','Kertajaya','2021-06-21','Roni','Iwan','Islam','Islam','Wirausaha','Pegawai Swasta','Surabaya','Surabaya','Naomi','Loli','Hindu','Katolik','Wiraswasta','Ibu Rumah Tangga','Surabaya','Surabaya','Kertajayaa','2021-05-20 21:58:41');
+INSERT INTO `perkawinan` VALUES (2,'Elly','Surabaya','1998-02-02','Surabaya','086666','Kristen','Kertajaya','Ahmad','Surabaya','1995-02-02','Surabaya','0858555','Kristen','Kertajaya','2021-06-21','Roni','Iwan','Islam','Islam','Wirausaha','Pegawai Swasta','Surabaya','Surabaya','Naomi','Loli','Hindu','Katolik','Wiraswasta','Ibu Rumah Tangga','Surabaya','Surabaya','Kertajayaa','2021-05-20 21:58:41',NULL);
 /*!40000 ALTER TABLE `perkawinan` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `registrasi_member`
+-- Table structure for table `registrasi_tk`
 --
 
-DROP TABLE IF EXISTS `registrasi_member`;
+DROP TABLE IF EXISTS `registrasi_tk`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `registrasi_member` (
+CREATE TABLE `registrasi_tk` (
   `id_registrasi` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
-  `rayon` varchar(100) DEFAULT NULL,
-  `nama` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_registrasi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nama_lengkap` varchar(100) DEFAULT NULL,
+  `nik` varchar(17) DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  `jenis_kelamin` char(1) DEFAULT NULL,
+  `tempat_lahir` varchar(100) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `agama` varchar(100) DEFAULT NULL,
+  `kewarganegaraan` char(1) DEFAULT NULL,
+  `tinggal_bersama` varchar(100) DEFAULT NULL,
+  `anak_ke` int DEFAULT NULL,
+  `usia` int DEFAULT NULL,
+  `telepon` varchar(13) DEFAULT NULL,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int DEFAULT NULL,
+  PRIMARY KEY (`id_registrasi`),
+  KEY `registrasi_tk_FK` (`id_user`),
+  CONSTRAINT `registrasi_tk_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `registrasi_member`
+-- Dumping data for table `registrasi_tk`
 --
 
-LOCK TABLES `registrasi_member` WRITE;
-/*!40000 ALTER TABLE `registrasi_member` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registrasi_member` ENABLE KEYS */;
+LOCK TABLES `registrasi_tk` WRITE;
+/*!40000 ALTER TABLE `registrasi_tk` DISABLE KEYS */;
+/*!40000 ALTER TABLE `registrasi_tk` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -499,7 +516,7 @@ CREATE TABLE `renungan_dan_doa_harian` (
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_renungan_dan_doa`),
   KEY `renungan_dan_doa_harian_FK` (`id_user`),
-  CONSTRAINT `renungan_dan_doa_harian_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
+  CONSTRAINT `renungan_dan_doa_harian_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -510,35 +527,6 @@ CREATE TABLE `renungan_dan_doa_harian` (
 LOCK TABLES `renungan_dan_doa_harian` WRITE;
 /*!40000 ALTER TABLE `renungan_dan_doa_harian` DISABLE KEYS */;
 /*!40000 ALTER TABLE `renungan_dan_doa_harian` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id_user` int NOT NULL AUTO_INCREMENT,
-  `nama` varchar(50) DEFAULT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` text,
-  `deleted_at` datetime DEFAULT NULL,
-  `jenis_user` char(1) DEFAULT NULL,
-  `status_user` tinyint(1) DEFAULT '1',
-  PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Syahril','syahril','$2y$10$0wPuIUsiKMFkJiAlmaUUQO.7idbOX8p1o20OPO/CgibX2VejuWMH.',NULL,'1',1);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -554,9 +542,9 @@ CREATE TABLE `warta_jemaat` (
   `file_warta` text,
   `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_warta`),
-  KEY `warta_jemaat_FK` (`id_user`),
   KEY `warta_jemaat_FK_1` (`id_jadwal`),
-  CONSTRAINT `warta_jemaat_FK` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  KEY `warta_jemaat_FK` (`id_user`),
+  CONSTRAINT `warta_jemaat_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`),
   CONSTRAINT `warta_jemaat_FK_1` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal_ibadah` (`id_jadwal`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -584,4 +572,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-21  0:53:00
+-- Dump completed on 2021-05-21 10:02:28
