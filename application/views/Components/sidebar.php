@@ -101,18 +101,6 @@
                         <p>Laporan Keuangan</p>
                     </a>
                 </li>
-                <li class="nav-item <?php if(isset($menu) && $menu == 'member') echo'active'?>">
-                    <a href="<?= base_url('Member')?>">
-                        <i class="fas fa-users"></i>
-                        <p>Member</p>
-                    </a>
-                </li>
-                <li class="nav-item <?php if(isset($menu) && $menu == 'user') echo'active'?>">
-                    <a href="<?= base_url('User')?>">
-                        <i class="fas fa-users"></i>
-                        <p>User</p>
-                    </a>
-                </li>
                 <li class="nav-item <?php if(isset($menu) && $menu == 'profile_gereja') echo'active'?>">
                     <a href="<?= base_url('Profile_gereja')?>">
                         <i class="fas fa-info"></i>
