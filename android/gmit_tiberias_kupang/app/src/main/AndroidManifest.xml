@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gmit_tiberias_kupang">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gmit_tiberias_kupang"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.Laporan_activity"></activity>
+        <activity android:name=".Activity.Register_activity" />
+        <activity android:name=".Activity.Tk_activity" />
+        <activity android:name=".Activity.Jemaat_activity" />
+        <activity android:name=".Activity.Pernikahan_activity" />
+        <activity android:name=".Activity.Baptisan_activity" />
+        <activity android:name=".Activity.Administrasi_activity" />
+        <activity android:name=".Activity.Renungan_activity" />
+        <activity android:name=".Activity.Kontak_activity" />
+        <activity android:name=".Activity.Artikel_activity" />
+        <activity android:name=".Activity.Warta_activity" />
+        <activity android:name=".Activity.Liturigi_activity" />
+        <activity android:name=".Activity.Informasi_activity" />
+        <activity android:name=".Activity.Jadwal_ibadah_activity" />
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Home" />
+    </application>
+
+</manifest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_pengumuman"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="12dp"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    android:layout_margin="12dp">
+
+    <RelativeLayout
+        android:outlineSpotShadowColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/et_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Judul : "
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:fontFamily="@font/product_sans_regular"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/judul"
+            android:layout_toRightOf="@id/et_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/product_sans_regular"
+            android:text="judul"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/et_isi"
+            android:layout_below="@+id/et_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isi : "
+            android:fontFamily="@font/product_sans_regular"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/isi"
+            android:layout_toRightOf="@id/et_judul"
+            android:layout_below="@+id/judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="isi"
+            android:fontFamily="@font/product_sans_regular"
+            android:layout_marginTop="5dp"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

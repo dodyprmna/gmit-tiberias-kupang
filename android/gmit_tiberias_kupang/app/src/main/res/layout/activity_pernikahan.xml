@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/header"
+    tools:context=".Activity.Pernikahan_activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="Pernikahan"
+        app:titleTextColor="#ffff"
+        android:fontFamily="@font/product_sans_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:outlineSpotShadowColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_item_nama_ibadah"
+                android:text="Nama Calon Lk : Syahril"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:fontFamily="@font/product_sans_regular"
+                android:textSize="15dp" />
+
+            <TextView
+                android:text="Nama Calon Pr : Intan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:fontFamily="@font/product_sans_regular"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_item_tanggal"
+                android:text="Tanggal Pemberkatan : 31 May 2021"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_waktu"
+                android:fontFamily="@font/product_sans_regular"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:text="Gereja : Kertajaya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_waktu"
+                android:fontFamily="@font/product_sans_regular"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</LinearLayout>
