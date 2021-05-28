@@ -1,0 +1,31 @@
+<?php
+
+    class dboperations{
+
+        private $con;
+
+        function __construct(){
+
+            require_once "db.php";
+            $db = new DBconnect();
+            $this->con = $db->connect();
+
+        }
+
+        function get_jadwal_ibadah()
+        {
+            $sql="select * from jadwal_ibadah";
+            $res=mysqli_query($this->con, $sql);
+            $rows=array();
+            $i=0;
+            while($row = mysqli_fetch_assoc($res))
+            {
+                $rows[$i]=$row;
+                $i++; 
+            }
+
+            return $rows;
+        }
+    }
+    
+?>

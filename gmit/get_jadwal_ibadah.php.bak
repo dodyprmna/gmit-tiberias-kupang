@@ -1,0 +1,10 @@
+<?php
+
+    $response = array();
+    require_once "dboperations.php";
+    $dbop = new dboperations();
+    echo json_encode($dbop->get_jadwal_ibadah());
+
+    // print_r(json_encode($dbop->getAllUsergambar()));
+    
+?> 

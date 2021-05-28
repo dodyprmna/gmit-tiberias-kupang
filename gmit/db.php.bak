@@ -1,0 +1,24 @@
+<?php
+
+    class DBconnect{
+
+        private $con;
+        function __construct(){
+        }
+
+        function connect(){
+            $this->con = new mysqli("localhost","root","","heroku_6e5e46fdc42c001");
+
+            if(mysqli_connect_errno())
+            {
+                echo "connection failed".mysqli_connect_err();
+            }
+
+            return $this->con;
+        }
+
+    }
+
+    header('Content-Type: application/json');
+
+?> 
