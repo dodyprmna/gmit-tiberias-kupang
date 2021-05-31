@@ -58,8 +58,8 @@
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Gereja Sebelumnya</label>
-											<input class="form-control" type="text" name="gereja" id="gereja" placeholder="Gereja Sebelumnya">
+					        				<label>Gereja Sebelumnya*</label>
+											<input class="form-control" type="text" name="gereja" id="gereja" placeholder="Gereja Sebelumnya" required>
 										</div>
 									</div>
 									<div class="col-md-4">

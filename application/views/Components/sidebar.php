@@ -61,7 +61,7 @@
                 </li>
                 <li class="nav-item <?php if(isset($menu) && $menu == 'liturgi') echo'active'?>">
                     <a href="<?= base_url('Liturgi')?>">
-                        <i class="fas fa-calendar"></i>
+                        <i class="fas fa-file-alt"></i>
                         <p>Liturgi</p>
                     </a>
                 </li>
