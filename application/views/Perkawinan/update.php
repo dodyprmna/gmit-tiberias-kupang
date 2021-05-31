@@ -3,13 +3,13 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Gereja</label>
+				<label>Gereja*</label>
 				<input type="text" class="form-control" name="gereja" placeholder="Gereja" value="<?= $perkawinan->gereja?>" required>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Tanggal Pemberkatan</label>
+				<label>Tanggal Pemberkatan*</label>
 				<input type="date" class="form-control" name="tanggal_pemberkatan" value="<?= $perkawinan->tanggal_pemberkatan?>" required>
 			</div>
 		</div>
@@ -67,8 +67,8 @@
 		</div>
 		<div class="col-md-3">
 			<div class="form-group">
-				<label>Gereja</label>
-				<input class="form-control" type="text" name="gereja_calon_suami" id="gereja_calon_suami" value="<?= $perkawinan->gereja_calon_suami?>" placeholder="Gereja">
+				<label>Gereja*</label>
+				<input class="form-control" type="text" name="gereja_calon_suami" id="gereja_calon_suami" value="<?= $perkawinan->gereja_calon_suami?>" placeholder="Gereja" required>
 			</div>
 		</div>
 	</div>
@@ -191,8 +191,8 @@
 		</div>
 		<div class="col-md-3">
 			<div class="form-group">
-				<label>Gereja</label>
-				<input class="form-control" type="text" name="gereja_calon_istri" id="gereja_calon_istri" value="<?= $perkawinan->gereja_calon_istri?>" placeholder="Gereja">
+				<label>Gereja*</label>
+				<input class="form-control" type="text" name="gereja_calon_istri" id="gereja_calon_istri" value="<?= $perkawinan->gereja_calon_istri?>" placeholder="Gereja" required>
 			</div>
 		</div>
 	</div>

@@ -23,55 +23,55 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Nama Lengkap</label>
+					        				<label>Nama Lengkap*</label>
 					        				<input class="form-control" type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Tempat Lahir</label>
+					        				<label>Tempat Lahir*</label>
 					        				<input class="form-control" type="text" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat Lahir" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Tanggal Lahir</label>
+					        				<label>Tanggal Lahir*</label>
 					        				<input class="form-control" type="date" name="tanggal_lahir" id="tanggal_lahir" placeholder="Tanggal Lahir" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Alamat Lengkap</label>
+					        				<label>Alamat Lengkap*</label>
 					        				<textarea class="form-control" name="alamat" id="alamat" cols="3" placeholder="Alamat Lengkap" required></textarea>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Nama Ayah</label>
+					        				<label>Nama Ayah*</label>
 					        				<input class="form-control" type="text" name="nama_ayah" id="nama_ayah" placeholder="Nama Ayah" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Nama Ibu</label>
+					        				<label>Nama Ibu*</label>
 					        				<input class="form-control" type="text" name="nama_ibu" id="nama_ibu" placeholder="Nama Ibu" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Tanggal Baptis</label>
+					        				<label>Tanggal Baptis*</label>
 					        				<input class="form-control" type="date" name="tanggal_baptis" id="tanggal_baptis" required>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Tempat Baptis</label>
+					        				<label>Tempat Baptis*</label>
 											<textarea class="form-control" name="tempat_baptis" id="tempat_baptis" cols="3" placeholder="Tempat Baptis" required></textarea>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-					        				<label>Oleh</label>
+					        				<label>Oleh*</label>
 					        				<input class="form-control" type="text" name="oleh" id="oleh" placeholder="Oleh" required>
 					        				
 										</div>
