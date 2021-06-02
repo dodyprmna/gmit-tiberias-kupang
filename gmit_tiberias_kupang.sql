@@ -67,7 +67,7 @@ CREATE TABLE `baptisan` (
   PRIMARY KEY (`id_baptisan`),
   KEY `baptisan_FK` (`id_user`),
   CONSTRAINT `baptisan_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,6 +76,7 @@ CREATE TABLE `baptisan` (
 
 LOCK TABLES `baptisan` WRITE;
 /*!40000 ALTER TABLE `baptisan` DISABLE KEYS */;
+INSERT INTO `baptisan` VALUES (2,'Syahril','Surabaya','2000-06-03','Surabaya','Syahril','Syahra','2021-06-17','Rumah','Rafqi','2021-06-01 22:47:50',NULL);
 /*!40000 ALTER TABLE `baptisan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,7 +238,7 @@ CREATE TABLE `jemaat` (
   `nama` varchar(100) DEFAULT NULL,
   `nik` varchar(17) DEFAULT NULL,
   `gereja_sebelumnya` varchar(100) DEFAULT NULL,
-  `added_at` datetime DEFAULT NULL,
+  `added_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `email` varchar(100) DEFAULT NULL,
   `password` text,
   `rayon` varchar(12) DEFAULT NULL,
@@ -255,7 +256,7 @@ CREATE TABLE `jemaat` (
 
 LOCK TABLES `jemaat` WRITE;
 /*!40000 ALTER TABLE `jemaat` DISABLE KEYS */;
-INSERT INTO `jemaat` VALUES (1,'Syahril','115151515','Kertajaya',NULL,'syahril@gmail.com','$2y$10$RKMx0gcYKS/inWbBz5rW0ecJTjea3o/bnwRGE.qQx4/G11lCLcOzi','5',1,'1','2021-05-20 23:45:00','Pakis'),(2,'Syahril','55555','Kertajaya',NULL,'syahri@gmail.com','$2y$10$ccdquUlaslf4/aXqNxFTQO.ZJfTYVfA7cEfj.X3TcpmMnjypfGxfi','2',1,'1',NULL,'Surabaya'),(3,'Rafqi','555555','Kertajaya',NULL,'rafqi@gmail.com','$2y$10$G6Ywqdlk.XhMu9ep.wk4VOS1ArnwtkUNllWUac94v5V67WIaPpAjy','2',1,'2',NULL,'Malang'),(4,'Dody Pramana','1111','Kertajaya',NULL,'dodyprmna6@gmail.com','$2y$10$Ijq55hvWIQwKbXP55uMmPe/1o/gwhhOkQqCeY1JNMUf4JQpGGghGu','1',1,'1',NULL,'Surabaya');
+INSERT INTO `jemaat` VALUES (1,'Syahril','115151515','Kertajaya','2021-05-20 23:45:00','syahril@gmail.com','$2y$10$RKMx0gcYKS/inWbBz5rW0ecJTjea3o/bnwRGE.qQx4/G11lCLcOzi','5',1,'1','2021-05-20 23:45:00','Pakis'),(2,'Syahril','55555','Kertajaya','2021-05-20 23:45:00','syahri@gmail.com','$2y$10$ccdquUlaslf4/aXqNxFTQO.ZJfTYVfA7cEfj.X3TcpmMnjypfGxfi','2',1,'1',NULL,'Surabaya'),(3,'Rafqi','555555','Kertajaya','2021-05-20 23:45:00','rafqi@gmail.com','$2y$10$G6Ywqdlk.XhMu9ep.wk4VOS1ArnwtkUNllWUac94v5V67WIaPpAjy','2',1,'2',NULL,'Malang'),(4,'Dody Pramana','1111','Kertajaya','2021-05-20 23:45:00','dodyprmna6@gmail.com','$2y$10$Ijq55hvWIQwKbXP55uMmPe/1o/gwhhOkQqCeY1JNMUf4JQpGGghGu','1',1,'1',NULL,'Surabaya');
 /*!40000 ALTER TABLE `jemaat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -490,7 +491,7 @@ CREATE TABLE `registrasi_tk` (
   PRIMARY KEY (`id_registrasi`),
   KEY `registrasi_tk_FK` (`id_user`),
   CONSTRAINT `registrasi_tk_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -499,6 +500,7 @@ CREATE TABLE `registrasi_tk` (
 
 LOCK TABLES `registrasi_tk` WRITE;
 /*!40000 ALTER TABLE `registrasi_tk` DISABLE KEYS */;
+INSERT INTO `registrasi_tk` VALUES (2,'Rani','1545454','Surabaya','2','Surabaya','2016-06-04','Kristen','1','Orang Tua',1,5,'052554','2021-06-02 08:31:49',NULL);
 /*!40000 ALTER TABLE `registrasi_tk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -572,4 +574,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-28 20:10:16
+-- Dump completed on 2021-06-02  8:55:24
