@@ -28,7 +28,7 @@ class Renungan_dan_doa_harian extends CI_Controller {
 
         $data_berita = array(
             'isi'       => $isi,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         ); 
 
         $insert = $this->M_codeigniter->insert('renungan_dan_doa_harian',$data_berita);

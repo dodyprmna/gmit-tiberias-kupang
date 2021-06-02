@@ -41,7 +41,7 @@ class Jadwal_ibadah extends CI_Controller {
             'tanggal'       => $tanggal,
             'jam_mulai'     => $jam_mulai,
             'jam_selesai'   => $jam_selesai,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         );  
 
         // insert data user ke dataase

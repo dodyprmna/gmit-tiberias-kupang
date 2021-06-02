@@ -31,7 +31,7 @@ class Berita extends CI_Controller {
         $data_berita = array(
             'judul_berita'     => $judul,
             'isi_berita'       => $isi,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         ); 
 
         $insert_berita = $this->M_codeigniter->insert_get_id('berita',$data_berita);

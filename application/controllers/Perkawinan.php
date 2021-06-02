@@ -91,7 +91,7 @@ class Perkawinan extends CI_Controller {
             'pekerjaan_ibu_calon_istri'     => $pekerjaan_ibu_calon_istri,
             'gereja'                        => $gereja,
             'tanggal_pemberkatan'           => $tanggal_pemberkatan,
-            // 'id_user'                       => $this->session->userdata("id_user")
+            'id_user'                       => $this->session->userdata("id_user")
         ); 
 
         $insert = $this->M_codeigniter->insert('perkawinan',$data);

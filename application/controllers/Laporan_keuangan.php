@@ -38,7 +38,7 @@ class Laporan_keuangan extends CI_Controller {
             'jumlah'                => $jumlah,
             'tanggal'               => $tanggal,
             'keterangan'            => $keterangan,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         );  
 
         // insert data user ke dataase

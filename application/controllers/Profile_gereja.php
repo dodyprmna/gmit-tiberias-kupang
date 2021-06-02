@@ -36,8 +36,8 @@ class Profile_gereja extends CI_Controller {
             'alamat_gereja'   => $alamat_gereja,
             'tentang_kami'    => $tentang_kami,
             'pelayanan_gereja'=> $pelayanan_gereja,
-            'kontak'          => $kontak
-            // 'id_user'       => $this->session->user_data('id_user'),
+            'kontak'          => $kontak,
+            'id_user'       => $this->session->user_data('id_user'),
         ); 
         $insert = $this->M_codeigniter->insert('informasi_gereja',$data);
         

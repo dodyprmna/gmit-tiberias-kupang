@@ -31,7 +31,7 @@ class Artikel extends CI_Controller {
         $data_artikel = array(
             'judul_artikel'     => $judul,
             'isi_artikel'       => $isi,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         ); 
 
         $insert_artikel = $this->M_codeigniter->insert_get_id('artikel',$data_artikel);

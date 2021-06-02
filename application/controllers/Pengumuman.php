@@ -32,7 +32,7 @@ class Pengumuman extends CI_Controller {
         $data = array(
             'judul'     => $judul,
             'isi'       => $isi,
-            'id_user'       => $this->session->user_data('id_user'),
+            'id_user'       => $this->session->userdata('id_user'),
         );  
 
         // insert data user ke dataase

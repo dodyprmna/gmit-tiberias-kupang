@@ -44,6 +44,7 @@ class Baptisan extends CI_Controller {
             'nama_ibu'      => $nama_ibu,
             'tanggal_baptis'=> $tanggal_baptis,
             'tempat_baptis' => $tempat_baptis,
+            'id_user'       => $this->session->userdata('id_user'),
             'oleh'          => $oleh
         ); 
 
