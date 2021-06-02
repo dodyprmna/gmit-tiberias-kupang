@@ -80,7 +80,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 					        				<label>Tinggal Bersama*</label>
-					        				<input class="form-control" type="text" name="tinggal_bersama" id="tinggal_bersama" required>
+					        				<input class="form-control" type="text" name="tinggal_bersama" id="tinggal_bersama" placeholder="Tinggal Bersama" required>
 										</div>
 									</div>
 									<div class="col-md-4">
