@@ -1,6 +1,6 @@
 <div class="page-inner">
 	<div class="page-header">
-		<h4 class="page-title">Baptisan</h4>
+		<h4 class="page-title">Taman Kanak Kanak</h4>
 	</div>
 
 	<div class="row">
