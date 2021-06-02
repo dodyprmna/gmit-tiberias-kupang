@@ -20,30 +20,76 @@ class Dashboard extends CI_Controller {
 		$this->load->view('Components/main',$data);
 	}
 	
-	public function get_data_perbulan()
+	public function get_statistik()
 	{
-		if($this->session->userdata('role') == 2){
-			$data = $this->M_dashboard->get_data_perbulan_vendor($this->session->userdata('id_user'));
-		}else{
-			$data = $this->M_dashboard->get_data_perbulan();
+		$baptisan = array();
+		$perkawinan = array();
+		$jemaat = array();
+		$tk = array();
+		$tahun = array();
+		$data_baptisan = $this->M_dashboard->get_statistik_baptisan();
+		$data_perkawinan = $this->M_dashboard->get_statistik_perkawinan();
+		$data_jemaat = $this->M_dashboard->get_statistik_jemaat();
+		$data_tahun = $this->M_dashboard->get_tahun_registrasi_tk()->result();
+
+		foreach($data_baptisan as $row){
+			$baptisan[] = intval($row->Februari);
+			$baptisan[] = intval($row->Januari);
+			$baptisan[] = intval($row->Maret);
+			$baptisan[] = intval($row->April);
+			$baptisan[] = intval($row->Mei);
+			$baptisan[] = intval($row->Juni);
+			$baptisan[] = intval($row->Juli);
+			$baptisan[] = intval($row->Agustus);
+			$baptisan[] = intval($row->September);
+			$baptisan[] = intval($row->Oktober);
+			$baptisan[] = intval($row->November);
+			$baptisan[] = intval($row->Desember);
+		}
+		foreach($data_perkawinan as $row){
+			$perkawinan[] = $row->Januari;
+			$perkawinan[] = $row->Februari;
+			$perkawinan[] = $row->Maret;
+			$perkawinan[] = $row->April;
+			$perkawinan[] = $row->Mei;
+			$perkawinan[] = $row->Juni;
+			$perkawinan[] = $row->Juli;
+			$perkawinan[] = $row->Agustus;
+			$perkawinan[] = $row->September;
+			$perkawinan[] = $row->Oktober;
+			$perkawinan[] = $row->November;
+			$perkawinan[] = $row->Desember;
+		}
+		foreach($data_jemaat as $row){
+			$jemaat[] = $row->Januari;
+			$jemaat[] = $row->Februari;
+			$jemaat[] = $row->Maret;
+			$jemaat[] = $row->April;
+			$jemaat[] = $row->Mei;
+			$jemaat[] = $row->Juni;
+			$jemaat[] = $row->Juli;
+			$jemaat[] = $row->Agustus;
+			$jemaat[] = $row->September;
+			$jemaat[] = $row->Oktober;
+			$jemaat[] = $row->November;
+			$jemaat[] = $row->Desember;
 		}
 
-		foreach($data as $row){
-			$total[] = $row->Januari;
-			$total[] = $row->Februari;
-			$total[] = $row->Maret;
-			$total[] = $row->April;
-			$total[] = $row->Mei;
-			$total[] = $row->Juni;
-			$total[] = $row->Juli;
-			$total[] = $row->Agustus;
-			$total[] = $row->September;
-			$total[] = $row->Oktober;
-			$total[] = $row->November;
-			$total[] = $row->Desember;
+
+		foreach($data_tahun as $row){
+			$tahun[] = $row->tahun;
+			$tk[] = $this->M_dashboard->get_statistik_tk($row->tahun)->num_rows();
 		}
 
-		echo json_encode($total);
+		$output = array(
+			'baptisan' 		=> $baptisan, 
+			'perkawinan'	=> $perkawinan,
+			'jemaat'		=> $jemaat,
+			'tk'			=> $tk,
+			'tahun'			=> $tahun
+		);
+
+		echo json_encode($output);
 	}
 
 	public function get_data_pertahun()
