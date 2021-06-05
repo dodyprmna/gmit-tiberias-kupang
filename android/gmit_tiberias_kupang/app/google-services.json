@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "300350366411",
+    "project_id": "gmit-tiberias-kupang",
+    "storage_bucket": "gmit-tiberias-kupang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300350366411:android:19069ecd8260f47303b14e",
+        "android_client_info": {
+          "package_name": "com.example.gmit_tiberias_kupang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300350366411-evc380380foeq3207fs26tjorvnn5fim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmmttKPNRzRdcGDY3zVaduJhggdzhwoQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300350366411-evc380380foeq3207fs26tjorvnn5fim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

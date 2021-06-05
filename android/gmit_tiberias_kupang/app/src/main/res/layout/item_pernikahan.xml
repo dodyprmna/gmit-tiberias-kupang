@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cv_pernikahan"
+	style="@style/loginCard"
+	android:elevation="5dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardCornerRadius="@dimen/loginCardRadius">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:orientation="vertical"
+		android:padding="5dp">
+
+		<TextView
+			android:id="@+id/et_nama_lk"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Nama Calon Laki-laki : "
+			android:layout_marginTop="5dp"
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/nama_calon_suami"
+			android:layout_toRightOf="@id/et_nama_lk"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:text="nama_calon_suami"
+			android:textColor="#000"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/et_nama_pr"
+			android:layout_below="@+id/nama_calon_suami"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Nama Calon Perempuan : "
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/nama_calon_istri"
+			android:layout_toRightOf="@id/et_nama_pr"
+			android:layout_below="@+id/nama_calon_suami"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="nama_calon_istri"
+			android:fontFamily="@font/product_sans_regular"
+			android:textColor="#000"
+			android:textSize="15dp"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/et_tgl_pemberkatan"
+			android:layout_below="@+id/nama_calon_istri"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Tanggal Pemberkatan : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tanggal_pemberkatan"
+			android:layout_toRightOf="@id/et_tgl_pemberkatan"
+			android:layout_below="@+id/nama_calon_istri"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="tanggal_pemberkatan"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/et_gereja"
+			android:layout_below="@+id/tanggal_pemberkatan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Gereja : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/gereja"
+			android:layout_toRightOf="@id/et_gereja"
+			android:layout_below="@+id/tanggal_pemberkatan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="gereja"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+
+
+
+	</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

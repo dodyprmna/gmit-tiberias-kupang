@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.tambah_tk_activity">
+	<ScrollView
+		style="@style/parent">
+
+		<RelativeLayout
+			style="@style/parent">
+
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
+
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
+
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:orientation="vertical"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="30dp"
+				android:layout_marginLeft="30dp">
+
+
+				<androidx.cardview.widget.CardView
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					xmlns:app="http://schemas.android.com/apk/res-auto"
+					style="@style/loginCard"
+					app:cardCornerRadius="@dimen/loginCardRadius"
+					android:elevation="5dp"
+					android:layout_gravity="center"
+					android:layout_marginTop="@dimen/loginViewsMargin"
+					android:layout_marginBottom="@dimen/loginViewsMargin"
+					android:background="@color/whiteCardColor">
+
+					<LinearLayout
+						style="@style/linearParent"
+						android:layout_gravity="center"
+						android:padding="@dimen/loginViewsMargin">
+
+						<TextView
+							style="@style/headerTextPrimary"
+							android:text="REGISTRASI"
+							android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+						<TextView
+							style="@style/headerTextPrimary"
+							android:text="TAMAN KANAK-KANAK"/>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_lengkap"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Lengkap"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nik"
+								style="@style/modifiedEditText"
+								android:inputType="number"
+								android:maxLines="1"
+								android:hint="NIK"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<TextView
+								android:id="@+id/tv_jenis_kelamin"
+								style="@style/modifiedEditText"
+								android:inputType="textEmailAddress"
+								android:text="Jenis Kelamin"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<RadioGroup
+								android:id="@+id/rg_jk"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
+
+								<RadioButton
+									android:id="@+id/rb_lk"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text="Laki-laki"/>
+
+								<RadioButton
+									android:id="@+id/rb_pr"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text="Perempuan" />
+							</RadioGroup>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tempat_lahir"
+								style="@style/modifiedEditText"
+								android:hint="Tempat Lahir"
+								android:maxLines="1"
+								android:inputType="text"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tanggal_lahir"
+								style="@style/modifiedEditText"
+								android:hint="Tanggal Lahir"
+								android:maxLines="1"
+								android:inputType="date"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama"/>
+						</androidx.appcompat.widget.Toolbar>
+
+<!--						<androidx.appcompat.widget.Toolbar-->
+<!--							style="@style/parent"-->
+<!--							android:layout_marginTop="@dimen/signup_text_margin_top">-->
+<!--							<EditText-->
+<!--								android:id="@+id/kewarganegaraan"-->
+<!--								style="@style/modifiedEditText"-->
+<!--								android:inputType="text"-->
+<!--								android:maxLines="1"-->
+<!--								android:hint="Kewarganegaraan"/>-->
+<!--						</androidx.appcompat.widget.Toolbar>-->
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tinggal_bersama"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Tinggal Bersama"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/anak_ke"
+								style="@style/modifiedEditText"
+								android:inputType="number"
+								android:maxLines="1"
+								android:hint="Anak ke"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/usia"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Usia"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/telepon"
+								style="@style/modifiedEditText"
+								android:inputType="number"
+								android:maxLines="1"
+								android:hint="Telepon"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<Button
+							android:id="@+id/button_add"
+							style="@style/loginButton"
+							android:layout_gravity="center"
+							android:text="Daftar" />
+
+
+
+					</LinearLayout>
+				</androidx.cardview.widget.CardView>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</RelativeLayout>

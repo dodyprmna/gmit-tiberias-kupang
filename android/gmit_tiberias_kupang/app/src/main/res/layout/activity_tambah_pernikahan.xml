@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Tambah_pernikahan_activity">
+	<ScrollView
+		style="@style/parent">
+
+		<RelativeLayout
+			style="@style/parent">
+
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
+
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
+
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:orientation="vertical"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="30dp"
+				android:layout_marginLeft="30dp">
+
+
+				<androidx.cardview.widget.CardView
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					xmlns:app="http://schemas.android.com/apk/res-auto"
+					style="@style/loginCard"
+					app:cardCornerRadius="@dimen/loginCardRadius"
+					android:elevation="5dp"
+					android:layout_gravity="center"
+					android:layout_marginTop="@dimen/loginViewsMargin"
+					android:layout_marginBottom="@dimen/loginViewsMargin"
+					android:background="@color/whiteCardColor">
+
+					<LinearLayout
+						style="@style/linearParent"
+						android:layout_gravity="center"
+						android:padding="@dimen/loginViewsMargin">
+
+						<TextView
+							style="@style/headerTextPrimary"
+							android:text="DAFTAR PERNIKAHAN"
+							android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tempat_lahir_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Tempat Lahir Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tanggal_lahir_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="date"
+								android:maxLines="1"
+								android:hint="Tanggal Lahir Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="textEmailAddress"
+								android:maxLines="1"
+								android:hint="Alamat Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/telepon_calon_istri"
+								style="@style/modifiedEditText"
+								android:hint="Telp Calon Istri"
+								android:maxLines="1"
+								android:inputType="text"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/gereja_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Gereja Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tempat_lahir_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Tempat Lahir Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tanggal_lahir_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Tanggal Lahir Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/telepon_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Telp Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/gereja_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Gereja Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/tanggal_pemberkatan"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Tanggal Pemberkatan"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_ayah_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Ayah Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_ayah_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Ayah Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_ayah_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Ayah Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_ayah_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Ayah Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/pekerjaan_ayah_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Pekerjaan Ayah Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/pekerjaan_ayah_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Pekerjaan Ayah Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_ayah_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat Ayah Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_ayah_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat Ayah Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_ibu_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Ibu Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_ibu_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama Ibu Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_ibu_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Ibu Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/agama_ibu_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Agama Ibu Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/pekerjaan_ibu_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Pekerjaan Ibu Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/pekerjaan_ibu_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Pekerjaan Ibu Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_ibu_calon_suami"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat Ibu Calon Suami"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_ibu_calon_istri"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat Ibu Calon Istri"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/gereja"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Gereja"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<Button
+							android:id="@+id/button_add"
+							style="@style/loginButton"
+							android:layout_gravity="center"
+							android:text="Daftar" />
+
+
+
+					</LinearLayout>
+				</androidx.cardview.widget.CardView>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</RelativeLayout>
