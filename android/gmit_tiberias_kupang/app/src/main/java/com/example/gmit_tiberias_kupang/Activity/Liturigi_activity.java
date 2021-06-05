@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.VoiceInteractor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toolbar;
 
@@ -121,5 +122,11 @@ public class Liturigi_activity extends AppCompatActivity {
         GetJSON gj = new GetJSON();
         gj.execute();
     }
+
+    public void download_file(View view){
+
+    	Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.0.20/gmit-tiberias-kupang/uploads/liturgi/doc1123.pdf"));
+    	startActivity(browserIntent);
+	}
 
 }

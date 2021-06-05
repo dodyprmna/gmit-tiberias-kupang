@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.VoiceInteractor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toolbar;
 
@@ -52,31 +53,31 @@ public class Warta_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liturigi);
+        setContentView(R.layout.activity_warta);
         listView = (ListView) findViewById(R.id.listView);
 //        listView.setOnItemClickListener(this);
         getJSON();
     }
 
-    private void showLiturgi() {
+    private void showWarta() {
         JSONObject jsonObject = null;
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
             jsonObject = new JSONObject(JSON_STRING);
-            JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY_L);
+            JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY_WARTA);
 
             for (int i = 0; i < result.length(); i++) {
                 JSONObject jo = result.getJSONObject(i);
-                String id_l = jo.getString(konfigurasi.TAG_ID_L);
-                String file_l = jo.getString(konfigurasi.TAG_FILE_L);
-                String nama_j = jo.getString(konfigurasi.TAG_NAMA_J);
+                String id_warta = jo.getString(konfigurasi.TAG_ID_WARTA);
+                String file_warta = jo.getString(konfigurasi.TAG_FILE_WARTA);
+                String nama_ibadah = jo.getString(konfigurasi.TAG_NAMA_IBADAH_WARTA);
 
 
-                HashMap<String, String> liturgi = new HashMap<>();
-                liturgi.put(konfigurasi.TAG_ID_L, id_l);
-                liturgi.put(konfigurasi.TAG_FILE_L, file_l);
-                liturgi.put(konfigurasi.TAG_NAMA_J, nama_j);
-                list.add(liturgi);
+                HashMap<String, String> warta = new HashMap<>();
+				warta.put(konfigurasi.TAG_ID_WARTA, id_warta);
+				warta.put(konfigurasi.TAG_FILE_WARTA, file_warta);
+				warta.put(konfigurasi.TAG_NAMA_IBADAH_WARTA, nama_ibadah);
+                list.add(warta);
             }
 
         } catch (JSONException e) {
@@ -84,9 +85,9 @@ public class Warta_activity extends AppCompatActivity {
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                Warta_activity.this, list, R.layout.item_liturgi,
-                new String[]{konfigurasi.TAG_FILE_L, konfigurasi.TAG_NAMA_J},
-                new int[]{R.id.file, R.id.nama_j});
+                Warta_activity.this, list, R.layout.item_warta,
+                new String[]{konfigurasi.TAG_FILE_WARTA, konfigurasi.TAG_NAMA_IBADAH_WARTA},
+                new int[]{R.id.file_warta, R.id.nama_ibadah});
 
         listView.setAdapter(adapter);
 
@@ -108,18 +109,24 @@ public class Warta_activity extends AppCompatActivity {
                 super.onPostExecute(s);
                 loading.dismiss();
                 JSON_STRING = s;
-                showLiturgi();
+				showWarta();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_GET_ALL_LITURGI);
+                String s = rh.sendGetRequest(konfigurasi.URL_GET_ALL_WARTA);
                 return s;
             }
         }
         GetJSON gj = new GetJSON();
         gj.execute();
     }
+
+	public void download_file(View view){
+
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.0.20/gmit-tiberias-kupang/uploads/warta_jemaat/test.pdf"));
+		startActivity(browserIntent);
+	}
 
 }

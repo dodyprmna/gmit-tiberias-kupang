@@ -1,26 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/header"
-    tools:context=".Activity.Informasi_activity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Informasi_activity">
+	<ScrollView
+		style="@style/parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title="Informasi"
-        app:titleTextColor="#ffff"
-        android:fontFamily="@font/product_sans_bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+		<RelativeLayout
+			style="@style/parent">
 
-    <ListView
-        android:layout_margin="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
+
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
+
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<RelativeLayout
+				android:id="@+id/rl1"
+				android:layout_marginTop="32dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_centerVertical="true"
+					android:layout_width="wrap_content"
+					android:fontFamily="@font/product_sans_bold"
+					android:layout_height="wrap_content"
+					android:text="Informasi"
+					android:textColor="#ffffff"
+					android:textSize="25dp">
+
+				</TextView>
+
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:orientation="vertical"
+				android:layout_marginTop="90dp"
+				android:layout_marginRight="30dp"
+				android:layout_marginLeft="30dp">
+
+				<ListView
+					android:id="@+id/listView"
+					android:layout_width="match_parent"
+					android:layout_height="600dp"
+					android:divider="@android:color/transparent"
+					android:dividerHeight="20px"
+					android:listSelector="@android:color/transparent" />
+
+			</LinearLayout>
+
+		</RelativeLayout>
 
 
-</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

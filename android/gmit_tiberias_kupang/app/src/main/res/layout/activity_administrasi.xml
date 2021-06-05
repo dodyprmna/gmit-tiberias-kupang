@@ -1,203 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/header"
-    tools:context=".Activity.Administrasi_activity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Home">
+	<ScrollView
+		style="@style/parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:fontFamily="@font/product_sans_bold"
-                android:layout_height="wrap_content"
-                android:text="Administrasi"
-                android:textColor="#ffffff"
-                android:textSize="25dp">
-
-            </TextView>
+		<RelativeLayout
+			style="@style/parent">
 
 
-        </RelativeLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
 
-        <GridLayout
-            android:columnCount="2"
-            android:rowCount="3"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
 
-                <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/l_baptis"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+				</LinearLayout>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/baptisan"/>
+			</LinearLayout>
 
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:gravity="center"
-                        android:text="Baptisan"
-                        android:fontFamily="@font/product_sans_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+			<RelativeLayout
+				android:id="@+id/rl1"
+				android:layout_marginTop="32dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
 
-                </LinearLayout>
+				<TextView
+					android:layout_centerVertical="true"
+					android:layout_width="wrap_content"
+					android:fontFamily="@font/product_sans_bold"
+					android:layout_height="wrap_content"
+					android:text="Administrasi"
+					android:textColor="#ffffff"
+					android:textSize="25dp">
 
-            </androidx.cardview.widget.CardView>
+				</TextView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+			</RelativeLayout>
 
-                <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/l_pernikahan"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+			<GridLayout
+				android:layout_below="@id/rl1"
+				android:columnCount="2"
+				android:rowCount="3"
+				android:paddingTop="20dp"
+				android:alignmentMode="alignMargins"
+				android:columnOrderPreserved="false"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/pernikahan"/>
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
 
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Pernikahan"
-                        android:gravity="center"
-                        android:fontFamily="@font/product_sans_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_baptis"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
 
-                </LinearLayout>
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/baptisan"/>
 
-            </androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:gravity="center"
+							android:text="Baptisan"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+					</LinearLayout>
 
-                <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/l_jemaat"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+				</androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/jemaat"/>
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
 
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Jemaat"
-                        android:gravity="center"
-                        android:fontFamily="@font/product_sans_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_pernikahan"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
 
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/pernikahan"/>
 
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:text="Pernikahan"
+							android:gravity="center"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
 
-                </LinearLayout>
+					</LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+				</androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
 
-                <LinearLayout
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/l_tk"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_jemaat"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/tk"/>
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/jemaat"/>
 
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Taman Kanak-kanak"
-                        android:gravity="center"
-                        android:fontFamily="@font/product_sans_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:text="Jemaat"
+							android:gravity="center"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
 
 
 
+					</LinearLayout>
+
+				</androidx.cardview.widget.CardView>
+
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
+
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_tk"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/tk"/>
+
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:text="Taman Kanak-kanak"
+							android:gravity="center"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+				</androidx.cardview.widget.CardView>
+
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
+
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_laporan"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/keuangan"/>
+
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:text="Laporan Keuangan"
+							android:gravity="center"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+				</androidx.cardview.widget.CardView>
+
+				<Button
+					android:id="@+id/button_logout"
+					style="@style/loginButton"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="@dimen/loginViewsMargin"
+					android:fontFamily="@font/product_sans"
+					android:text="Logout" />
 
 
-        </GridLayout>
+			</GridLayout>
 
-    </LinearLayout>
 
-</ScrollView>
+
+		</RelativeLayout>
+
+
+	</ScrollView>
+
+</RelativeLayout>

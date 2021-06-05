@@ -1,86 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@drawable/header"
-    tools:context=".Activity.Pernikahan_activity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Pernikahan_activity">
+	<ScrollView
+		style="@style/parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title="Pernikahan"
-        app:titleTextColor="#ffff"
-        android:fontFamily="@font/product_sans_bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+		<RelativeLayout
+			style="@style/parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        app:cardElevation="6dp"
-        app:cardCornerRadius="12dp"
-        android:layout_margin="12dp">
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
 
-        <LinearLayout
-            android:outlineSpotShadowColor="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="vertical"
-            android:padding="5dp">
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
 
-            <TextView
-                android:id="@+id/tv_item_nama_ibadah"
-                android:text="Nama Calon Lk : Syahril"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textColor="#000"
-                android:fontFamily="@font/product_sans_regular"
-                android:textSize="15dp" />
+				</LinearLayout>
 
-            <TextView
-                android:text="Nama Calon Pr : Intan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textColor="#000"
-                android:fontFamily="@font/product_sans_regular"
-                android:textSize="15dp" />
+			</LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_item_tanggal"
-                android:text="Tanggal Pemberkatan : 31 May 2021"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_waktu"
-                android:fontFamily="@font/product_sans_regular"
-                android:layout_marginTop="5dp"/>
+			<RelativeLayout
+				android:id="@+id/rl1"
+				android:layout_marginTop="32dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
 
-            <TextView
-                android:text="Gereja : Kertajaya"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_waktu"
-                android:fontFamily="@font/product_sans_regular"
-                android:layout_marginTop="5dp"/>
+				<TextView
+					android:layout_centerVertical="true"
+					android:layout_width="wrap_content"
+					android:fontFamily="@font/product_sans_bold"
+					android:layout_height="wrap_content"
+					android:text="Pernikahan"
+					android:textColor="#ffffff"
+					android:textSize="25dp">
 
-        </LinearLayout>
+				</TextView>
 
-    </androidx.cardview.widget.CardView>
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/addPernikahan"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/add"
+					android:layout_width="50dp"
+					android:layout_height="50dp">
+
+				</de.hdodenhof.circleimageview.CircleImageView>
+
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:orientation="vertical"
+				android:layout_marginTop="110dp"
+				android:layout_marginRight="30dp"
+				android:layout_marginLeft="30dp">
+
+				<ListView
+					android:id="@+id/listView"
+					android:layout_width="match_parent"
+					android:layout_height="600dp"
+					android:divider="@android:color/transparent"
+					android:dividerHeight="20px"
+					android:listSelector="@android:color/transparent" />
+
+			</LinearLayout>
+
+		</RelativeLayout>
 
 
+	</ScrollView>
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

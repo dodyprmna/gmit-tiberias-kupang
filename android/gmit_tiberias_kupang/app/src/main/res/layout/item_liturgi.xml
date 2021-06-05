@@ -3,15 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_l"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    card_view:cardCornerRadius="12dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp">
+	style="@style/loginCard"
+	android:elevation="5dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardCornerRadius="@dimen/loginCardRadius">
 
     <RelativeLayout
-        android:outlineSpotShadowColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -39,9 +37,20 @@
             android:textColor="#000"
             android:textSize="15dp" />
 
+		<TextView
+			android:id="@+id/tv_file"
+			android:layout_below="@id/nama_j"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="File : "
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
+
         <TextView
             android:id="@+id/file"
-            android:layout_below="@id/et_nama"
+			android:layout_toRightOf="@+id/tv_file"
+            android:layout_below="@id/nama_j"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -49,19 +58,12 @@
             android:text="file"
             android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="-171dp"
-            android:layout_marginLeft="-171dp"
-            android:src="@drawable/warta">
-
-        </ImageView>
-
-
-
-
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:text="Download File"
+			android:onClick="download_file"/>
 
     </RelativeLayout>
 

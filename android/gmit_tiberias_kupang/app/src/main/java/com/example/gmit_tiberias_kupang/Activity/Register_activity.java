@@ -18,10 +18,13 @@ import com.example.gmit_tiberias_kupang.R;
 public class Register_activity extends AppCompatActivity implements View.OnClickListener{
 
     //Dibawah ini merupakan perintah untuk mendefinikan View
-    private EditText editTextNama;
-    private EditText editTextRayon;
-    private EditText editTextUser;
+	private EditText editTextNama;
+	private EditText editTextNik;
+	private EditText editTextGereja;
+	private EditText editTextEmail;
     private EditText editTextPass;
+    private EditText editTextRayon;
+    private EditText editTextAlamat;
 
 
     private Button buttonAdd;
@@ -32,10 +35,13 @@ public class Register_activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         //Inisialisasi dari View
-        editTextNama = (EditText) findViewById(R.id.t_nama);
-        editTextRayon = (EditText) findViewById(R.id.t_rayon);
-        editTextUser = (EditText) findViewById(R.id.t_user);
-        editTextPass = (EditText) findViewById(R.id.t_pass);
+		editTextNama = (EditText) findViewById(R.id.nama_jemaat);
+		editTextNik = (EditText) findViewById(R.id.nik_jemaat);
+		editTextGereja = (EditText) findViewById(R.id.gereja_sblm);
+		editTextEmail = (EditText) findViewById(R.id.email_jemaat);
+		editTextPass = (EditText) findViewById(R.id.pass_jemaat);
+		editTextRayon = (EditText) findViewById(R.id.rayon_jemaat);
+		editTextAlamat = (EditText) findViewById(R.id.alamat_jemaat);
 
         buttonAdd = (Button) findViewById(R.id.button_register);
 
@@ -47,10 +53,13 @@ public class Register_activity extends AppCompatActivity implements View.OnClick
     //Dibawah ini merupakan perintah untuk Menambahkan Member (CREATE)
     private void addMember(){
 
-        final String nama = editTextNama.getText().toString().trim();
-        final String rayon = editTextRayon.getText().toString().trim();
-        final String user = editTextUser.getText().toString().trim();
-        final String pass = editTextPass.getText().toString().trim();
+		final String nama_jemaat = editTextNama.getText().toString().trim();
+		final String nik_jemaat = editTextNik.getText().toString().trim();
+		final String gereja_sblm = editTextGereja.getText().toString().trim();
+		final String email_jemaat = editTextEmail.getText().toString().trim();
+        final String pass_jemaat = editTextPass.getText().toString().trim();
+        final String rayon_jemaat = editTextRayon.getText().toString().trim();
+        final String alamat_jemaat = editTextAlamat.getText().toString().trim();
 
         class AddMember extends AsyncTask<Void,Void,String>{
 
@@ -72,11 +81,13 @@ public class Register_activity extends AppCompatActivity implements View.OnClick
             @Override
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<>();
-//                params.put(konfigurasi.KEY_ID_M,nama);
-                params.put(konfigurasi.KEY_RAYON_M,rayon);
-                params.put(konfigurasi.KEY_USER_M,user);
-                params.put(konfigurasi.KEY_PASS_M,pass);
-                params.put(konfigurasi.KEY_NAMA_M,nama);
+                params.put(konfigurasi.KEY_NAMA_JEMAAT,nama_jemaat);
+				params.put(konfigurasi.KEY_NIK_JEMAAT,nik_jemaat);
+				params.put(konfigurasi.KEY_GEREJA_JEMAAT,gereja_sblm);
+				params.put(konfigurasi.KEY_EMAIL_JEMAAT,email_jemaat);
+				params.put(konfigurasi.KEY_PASS_JEMAAT,pass_jemaat);
+                params.put(konfigurasi.KEY_RAYON_JEMAAT,rayon_jemaat);
+                params.put(konfigurasi.KEY_ALAMAT_JEMAAT,alamat_jemaat);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(konfigurasi.URL_ADD, params);
