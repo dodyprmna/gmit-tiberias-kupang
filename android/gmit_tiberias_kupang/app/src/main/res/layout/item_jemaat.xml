@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cv_jemaat"
+	style="@style/loginCard"
+	android:elevation="5dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardCornerRadius="@dimen/loginCardRadius">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:orientation="vertical"
+		android:padding="5dp">
+
+		<TextView
+			android:id="@+id/et_nama"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Nama : "
+			android:layout_marginTop="5dp"
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/nama"
+			android:layout_toRightOf="@id/et_nama"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:text="nama"
+			android:textColor="#000"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/et_nik"
+			android:layout_below="@+id/nama"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="NIK : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/nik"
+			android:layout_toRightOf="@id/et_nik"
+			android:layout_below="@+id/nama"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="nik"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_gereja_sebelumnya"
+			android:layout_below="@+id/nik"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Gereja Sebelumnya : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/gereja_sebelumnya"
+			android:layout_toRightOf="@id/tv_gereja_sebelumnya"
+			android:layout_below="@+id/nik"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="gereja_sebelumnya"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_email"
+			android:layout_below="@+id/gereja_sebelumnya"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Email : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/email"
+			android:layout_toRightOf="@id/tv_email"
+			android:layout_below="@+id/gereja_sebelumnya"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="email"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_rayon"
+			android:layout_below="@+id/email"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Rayon : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/rayon"
+			android:layout_toRightOf="@id/tv_rayon"
+			android:layout_below="@+id/email"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="rayon"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_alamat"
+			android:layout_below="@+id/rayon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Alamat : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/alamat"
+			android:layout_toRightOf="@id/tv_alamat"
+			android:layout_below="@+id/rayon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="alamat"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_status"
+			android:layout_below="@+id/alamat"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Status : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/status"
+			android:layout_toRightOf="@id/tv_status"
+			android:layout_below="@+id/alamat"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="status"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+
+
+
+	</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

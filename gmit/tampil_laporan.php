@@ -5,7 +5,9 @@
 	require_once('koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM laporan_keuangan";
+	$sql = "SELECT MONTHNAME(`tanggal`) AS tanggal, SUM(`jumlah`) AS `jumlah` 
+			FROM laporan_keuangan 
+			GROUP BY MONTH(`tanggal`)";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -17,12 +19,8 @@
 		
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
-			"id_lap"=>$row['id_laporan'],
-			"jenis_t"=>$row['jenis_transaksi'],
-			"kat"=>$row['kategori'],
-			"jum"=>$row['jumlah'],
-			"tgl_t"=>$row['tanggal'],
-			"ket_lap"=>$row['keterangan'],
+			"jumlah"=>$row['jumlah'],
+			"tanggal"=>$row['tanggal']
 		));
 	}
 	

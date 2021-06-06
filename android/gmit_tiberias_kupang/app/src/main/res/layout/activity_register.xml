@@ -1,225 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activity.Register_activity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Register_activity">
+	<ScrollView
+		style="@style/parent">
+
+		<RelativeLayout
+			style="@style/parent">
 
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/renungan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
 
-    <TextView
-        android:id="@+id/SI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Sistem Informasi"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
 
-    <TextView
-        android:id="@+id/SI2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Pelayanan GMIT"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
 
-    <TextView
-        android:id="@+id/SI3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Tiberia Kupang"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+				</LinearLayout>
 
-    <TextView
-        android:id="@+id/nama_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Nama Perawat"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.114" />
+			</LinearLayout>
 
-    <TextView
-        android:id="@+id/rayon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Rayon"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.113" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:orientation="vertical"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="30dp"
+				android:layout_marginLeft="30dp">
 
-    <EditText
-        android:id="@+id/t_nama"
-        android:layout_width="124dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="364dp"
-        android:ems="10"
-        android:hint="Nama"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nama_sign_up"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/t_rayon"
-        android:layout_width="137dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="364dp"
-        android:ems="10"
-        android:hint="rayon"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintStart_toEndOf="@+id/t_nama"
-        app:layout_constraintTop_toBottomOf="@+id/nama_sign_up"
-        app:layout_constraintVertical_bias="0.0" />
+				<TextView
+					style="@style/headerText"
+					android:layout_gravity="center"
+					android:text="SISTEM INFORMASI"
+					android:fontFamily="@font/product_sans_bold"
+					android:layout_marginTop="40dp"/>
 
-    <TextView
-        android:id="@+id/NIP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Username"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_nama"
-        app:layout_constraintVertical_bias="0.016" />
+				<TextView
+					style="@style/headerText"
+					android:layout_gravity="center"
+					android:text="PELAYANAN GMIT"
+					android:fontFamily="@font/product_sans_bold"/>
 
-    <EditText
-        android:id="@+id/t_user"
-        android:layout_width="286dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NIP"
-        app:layout_constraintVertical_bias="0.0" />
+				<TextView
+					style="@style/headerText"
+					android:layout_gravity="center"
+					android:text="TIBERIAS KUPANG"
+					android:fontFamily="@font/product_sans_bold"/>
 
-    <TextView
-        android:id="@+id/password_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Password"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_user"
-        app:layout_constraintVertical_bias="0.0" />
+				<androidx.cardview.widget.CardView
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					xmlns:app="http://schemas.android.com/apk/res-auto"
+					style="@style/loginCard"
+					app:cardCornerRadius="@dimen/loginCardRadius"
+					android:elevation="5dp"
+					android:layout_gravity="center"
+					android:layout_marginTop="@dimen/loginViewsMargin"
+					android:layout_marginBottom="@dimen/loginViewsMargin"
+					android:background="@color/whiteCardColor">
 
-    <EditText
-        android:id="@+id/t_pass"
-        android:layout_width="286dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_sign_up"
-        app:layout_constraintVertical_bias="0.0" />
+					<LinearLayout
+						style="@style/linearParent"
+						android:layout_gravity="center"
+						android:padding="@dimen/loginViewsMargin">
 
-    <Button
-        android:id="@+id/button_register"
-        android:layout_width="268dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/product_sans_regular"
-        android:text="Register"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+						<TextView
+							style="@style/headerTextPrimary"
+							android:text="@string/register"
+							android:layout_marginTop="@dimen/loginViewsMargin"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nama_jemaat"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Nama"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/nik_jemaat"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="NIK"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/gereja_sblm"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Gereja Sebelumnya"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/email_jemaat"
+								style="@style/modifiedEditText"
+								android:inputType="textEmailAddress"
+								android:maxLines="1"
+								android:hint="Email"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/pass_jemaat"
+								style="@style/modifiedEditText"
+								android:hint="@string/login_password_hint"
+								android:maxLines="1"
+								android:inputType="textPassword"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/rayon_jemaat"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Rayon"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<androidx.appcompat.widget.Toolbar
+							style="@style/parent"
+							android:layout_marginTop="@dimen/signup_text_margin_top">
+							<EditText
+								android:id="@+id/alamat_jemaat"
+								style="@style/modifiedEditText"
+								android:inputType="text"
+								android:maxLines="1"
+								android:hint="Alamat"/>
+						</androidx.appcompat.widget.Toolbar>
+
+						<Button
+							android:id="@+id/button_register"
+							style="@style/loginButton"
+							android:layout_gravity="center"
+							android:text="Register" />
+
+<!--						<TextView-->
+<!--							style="@style/parent"-->
+<!--							android:textAlignment="center"-->
+<!--							android:textStyle="bold"-->
+<!--							android:textColor="@color/primaryTextColor"-->
+<!--							android:text="@string/signup_login_hint"-->
+<!--							android:layout_marginTop="@dimen/loginViewsMargin"/>-->
+
+					</LinearLayout>
+				</androidx.cardview.widget.CardView>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</RelativeLayout>

@@ -59,7 +59,7 @@ public class Home extends AppCompatActivity {
         l_kontak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Kontak_activity.class));
+                startActivity(new Intent(getApplicationContext(), Pelayanan_activity.class));
             }
         });
         l_renungan.setOnClickListener(new View.OnClickListener() {

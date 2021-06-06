@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	style="@style/loginParent"
+	tools:context=".Activity.Detail_baptisan_activity">
+	<ScrollView
+		style="@style/parent">
+
+		<RelativeLayout
+			style="@style/parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:weightSum="12">
+
+				<LinearLayout
+					style="@style/parent"
+					android:background="@drawable/login_shape_bk"
+					android:orientation="vertical"
+					android:layout_weight="3">
+
+					<ImageView
+						style="@style/parent"
+						android:background="@drawable/ic_login_bk"
+						android:contentDescription="login background" />
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<RelativeLayout
+				android:id="@+id/rl1"
+				android:layout_marginTop="32dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_centerVertical="true"
+					android:layout_width="wrap_content"
+					android:fontFamily="@font/product_sans_bold"
+					android:layout_height="wrap_content"
+					android:text="Detail Baptisan"
+					android:textColor="#ffffff"
+					android:textSize="25dp">
+
+				</TextView>
+
+			</RelativeLayout>
+
+			<androidx.cardview.widget.CardView
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:card_view="http://schemas.android.com/apk/res-auto"
+				android:id="@+id/cv_baptisan"
+				style="@style/loginCard"
+				android:elevation="5dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				card_view:cardCornerRadius="@dimen/loginCardRadius"
+				android:padding="20dp"
+				android:layout_below="@id/rl1"
+				android:layout_margin="20dp">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="5dp"
+					android:orientation="vertical"
+					android:padding="5dp">
+
+					<TextView
+						android:id="@+id/tv_nama"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Nama : "
+						android:layout_marginTop="5dp"
+						android:textColor="#000"
+						android:fontFamily="@font/product_sans_regular"
+						android:textSize="15dp" />
+
+					<TextView
+						android:id="@+id/et_nama"
+						android:layout_toRightOf="@id/tv_nama"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5dp"
+						android:fontFamily="@font/product_sans_regular"
+						android:text="nama"
+						android:textColor="#000"
+						android:textSize="15dp" />
+
+					<TextView
+						android:id="@+id/tv_tempat_lahir"
+						android:layout_below="@+id/et_nama"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Tempat Lahir : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_tempat_lahir"
+						android:layout_toRightOf="@id/tv_tempat_lahir"
+						android:layout_below="@+id/et_nama"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_tgl_lahir"
+						android:layout_below="@+id/et_tempat_lahir"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Tanggal Lahir : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_tgl_lahir"
+						android:layout_toRightOf="@id/tv_tgl_lahir"
+						android:layout_below="@+id/et_tempat_lahir"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_alamat"
+						android:layout_below="@+id/et_tgl_lahir"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Alamat : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_alamat"
+						android:layout_toRightOf="@id/tv_alamat"
+						android:layout_below="@+id/et_tgl_lahir"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_nAyah"
+						android:layout_below="@+id/tv_alamat"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Nama Ayah : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_nAyah"
+						android:layout_toRightOf="@id/tv_nAyah"
+						android:layout_below="@+id/tv_alamat"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_nIbu"
+						android:layout_below="@+id/tv_nAyah"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Nama Ibu : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_nIbu"
+						android:layout_toRightOf="@id/tv_nIbu"
+						android:layout_below="@+id/tv_nAyah"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+					android:id="@+id/tv_tgl_baptis"
+					android:layout_below="@+id/tv_nIbu"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Tanggal Baptis : "
+					android:fontFamily="@font/product_sans_regular"
+					android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_tgl_bap"
+						android:layout_toRightOf="@id/tv_tgl_baptis"
+						android:layout_below="@+id/tv_nIbu"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_tempat_baptis"
+						android:layout_below="@+id/tv_tgl_baptis"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Tempat Baptis : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_tempat_bap"
+						android:layout_toRightOf="@id/tv_tempat_baptis"
+						android:layout_below="@+id/tv_tgl_baptis"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/tv_oleh"
+						android:layout_below="@+id/tv_tempat_baptis"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Tempat Baptis : "
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+					<TextView
+						android:id="@+id/et_oleh"
+						android:layout_toRightOf="@id/tv_oleh"
+						android:layout_below="@+id/tv_tempat_baptis"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="tgl"
+						android:fontFamily="@font/product_sans_regular"
+						android:layout_marginTop="5dp"/>
+
+
+				</RelativeLayout>
+
+			</androidx.cardview.widget.CardView>
+
+		</RelativeLayout>
+
+
+	</ScrollView>
+
+</RelativeLayout>

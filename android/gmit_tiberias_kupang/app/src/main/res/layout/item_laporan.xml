@@ -1,103 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_lap"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    card_view:cardCornerRadius="12dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cv_laporan"
+	style="@style/loginCard"
+	android:elevation="5dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardCornerRadius="@dimen/loginCardRadius">
 
-    <RelativeLayout
-        android:outlineSpotShadowColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="vertical"
-        android:padding="5dp">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:orientation="vertical"
+		android:padding="5dp">
 
-        <TextView
-            android:id="@+id/et_tgl_lap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tanggal Transaksi : "
-            android:layout_marginTop="5dp"
-            android:textColor="#000"
-            android:fontFamily="@font/product_sans_regular"
-            android:textSize="15dp" />
+		<TextView
+			android:id="@+id/tv_tgl"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Laporan Keuangan Bulan : "
+			android:layout_marginTop="5dp"
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
 
-        <TextView
-            android:id="@+id/tgl_t"
-            android:layout_toRightOf="@id/et_tgl_lap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/product_sans_regular"
-            android:text="Nama"
-            android:textColor="#000"
-            android:textSize="15dp" />
+		<TextView
+			android:id="@+id/tanggal"
+			android:layout_toRightOf="@id/tv_tgl"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:text="tanggal"
+			android:textColor="#000"
+			android:textSize="15dp" />
 
-        <TextView
-            android:id="@+id/et_jenis"
-            android:layout_below="@+id/et_tgl_lap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jenis Transaksi : "
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
+		<TextView
+			android:id="@+id/tv_jumlah"
+			android:layout_below="@+id/tanggal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Jumlah Bulanan : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
 
-        <TextView
-            android:id="@+id/jenis_t"
-            android:layout_toRightOf="@id/et_jenis"
-            android:layout_below="@+id/tgl_t"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jenis"
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/et_kat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kategori : "
-            android:layout_below="@+id/et_jenis"
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/tgl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kat"
-            android:layout_toRightOf="@id/et_kat"
-            android:layout_below="@+id/jenis_t"
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/et_waktu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Waktu : "
-            android:layout_below="@+id/et_kat"
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/j_mulai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="j_mulai"
-            android:layout_toRightOf="@id/et_waktu"
-            android:layout_below="@+id/tgl"
-            android:fontFamily="@font/product_sans_regular"
-            android:layout_marginTop="5dp"/>
+		<TextView
+			android:id="@+id/jumlah"
+			android:layout_toRightOf="@id/tv_jumlah"
+			android:layout_below="@+id/tanggal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="jumlah"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
 
 
 
-    </RelativeLayout>
+
+	</RelativeLayout>
 
 </androidx.cardview.widget.CardView>
