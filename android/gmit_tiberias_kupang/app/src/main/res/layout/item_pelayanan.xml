@@ -17,28 +17,85 @@
 		android:padding="5dp">
 
 		<TextView
-			android:id="@+id/et_nama"
+			android:id="@+id/tv_nama_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Nama Gereja : "
+			android:layout_marginTop="5dp"
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/nama_gereja"
+			android:layout_toRightOf="@id/tv_nama_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:text="nama_gereja"
+			android:textColor="#000"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/tv_alamat_gereja"
+			android:layout_below="@+id/nama_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Alamat : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/alamat_gereja"
+			android:layout_toRightOf="@id/tv_alamat_gereja"
+			android:layout_below="@+id/nama_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="alamat_gereja"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_tentang_kami"
+			android:layout_below="@+id/alamat_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Tentang Kami : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tentang_kami"
+			android:layout_toRightOf="@id/tv_tentang_kami"
+			android:layout_below="@+id/alamat_gereja"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="tentang_kami"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/tv_pelayanan_gereja"
+			android:layout_below="@+id/tentang_kami"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Pelayanan Gereja : "
-			android:layout_marginTop="5dp"
-			android:textColor="#000"
 			android:fontFamily="@font/product_sans_regular"
-			android:textSize="15dp" />
+			android:layout_marginTop="5dp"/>
 
 		<TextView
 			android:id="@+id/pelayanan_gereja"
-			android:layout_toRightOf="@id/et_nama"
+			android:layout_toRightOf="@id/tv_pelayanan_gereja"
+			android:layout_below="@+id/tentang_kami"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="5dp"
+			android:text="pelayanan_gereja"
 			android:fontFamily="@font/product_sans_regular"
-			android:text="Pelayanan"
-			android:textColor="#000"
-			android:textSize="15dp" />
+			android:layout_marginTop="5dp"/>
 
 		<TextView
-			android:id="@+id/et_jenis"
+			android:id="@+id/tv_kontak"
 			android:layout_below="@+id/pelayanan_gereja"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -48,7 +105,7 @@
 
 		<TextView
 			android:id="@+id/kontak"
-			android:layout_toRightOf="@id/et_jenis"
+			android:layout_toRightOf="@id/tv_kontak"
 			android:layout_below="@+id/pelayanan_gereja"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"

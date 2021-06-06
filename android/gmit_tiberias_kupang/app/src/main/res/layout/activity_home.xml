@@ -135,7 +135,7 @@
 							android:layout_marginTop="12dp"
 							android:textColor="#6f6f6f"
 							android:textSize="18sp"
-							android:text="Informasi Umum"
+							android:text="Pengumuman"
 							android:gravity="center"
 							android:fontFamily="@font/product_sans_regular"
 							android:layout_width="match_parent"
@@ -269,6 +269,43 @@
 
 					<LinearLayout
 						android:foreground="?android:attr/selectableItemBackground"
+						android:id="@+id/l_berita"
+						android:orientation="vertical"
+						android:padding="16dp"
+						android:gravity="center"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<ImageView
+							android:layout_width="80dp"
+							android:layout_height="80dp"
+							android:src="@drawable/berita"/>
+
+						<TextView
+							android:layout_marginTop="12dp"
+							android:textColor="#6f6f6f"
+							android:textSize="18sp"
+							android:text="Berita"
+							android:gravity="center"
+							android:fontFamily="@font/product_sans_regular"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+				</androidx.cardview.widget.CardView>
+
+				<androidx.cardview.widget.CardView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_columnWeight="1"
+					android:layout_rowWeight="1"
+					app:cardElevation="6dp"
+					app:cardCornerRadius="12dp"
+					android:layout_margin="12dp">
+
+					<LinearLayout
+						android:foreground="?android:attr/selectableItemBackground"
 						android:id="@+id/l_kontak"
 						android:orientation="vertical"
 						android:padding="16dp"
@@ -279,13 +316,13 @@
 						<ImageView
 							android:layout_width="80dp"
 							android:layout_height="80dp"
-							android:src="@drawable/kontak"/>
+							android:src="@drawable/info"/>
 
 						<TextView
 							android:layout_marginTop="12dp"
 							android:textColor="#6f6f6f"
 							android:textSize="18sp"
-							android:text="Kontak Pelayanan"
+							android:text="Informasi Umum"
 							android:gravity="center"
 							android:fontFamily="@font/product_sans_regular"
 							android:layout_width="match_parent"

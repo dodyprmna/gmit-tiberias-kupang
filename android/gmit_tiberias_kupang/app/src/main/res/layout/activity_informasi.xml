@@ -45,7 +45,7 @@
 					android:layout_width="wrap_content"
 					android:fontFamily="@font/product_sans_bold"
 					android:layout_height="wrap_content"
-					android:text="Informasi"
+					android:text="Pengumuman"
 					android:textColor="#ffffff"
 					android:textSize="25dp">
 
