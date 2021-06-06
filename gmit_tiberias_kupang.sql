@@ -67,7 +67,7 @@ CREATE TABLE `baptisan` (
   PRIMARY KEY (`id_baptisan`),
   KEY `baptisan_FK` (`id_user`),
   CONSTRAINT `baptisan_FK` FOREIGN KEY (`id_user`) REFERENCES `jemaat` (`id_jemaat`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -573,5 +573,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+-- test
 
--- Dump completed on 2021-06-02  8:55:24
+-- Dump completed on 2021-06-06 21:03:37
