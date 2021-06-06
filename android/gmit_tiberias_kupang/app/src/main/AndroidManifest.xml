@@ -12,25 +12,24 @@
 		android:supportsRtl="true"
 		android:theme="@style/Theme.Gmit_tiberias_kupang"
 		android:usesCleartextTraffic="true">
-		<activity android:name=".Activity.tambah_tk_activity"></activity>
+		<activity android:name=".Activity.Berita_activity"></activity>
+		<activity android:name=".Activity.tambah_tk_activity" />
 		<activity android:name=".Activity.Tambah_pernikahan_activity" />
 		<activity android:name=".Activity.Tambah_baptisan_activity" />
 		<activity android:name=".Activity.Detail_baptisan_activity" />
-		<activity android:name=".Activity.Pelayanan_activity" />
-
-<!--		untuk mendapatkan token-->
-<!--		<service android:name=".fcm.Notif">-->
-<!--			android:stopWithTask="false">-->
-<!--			<intent-filter>-->
-<!--				<action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-<!--			</intent-filter>-->
-<!--		</service>-->
-
+		<activity android:name=".Activity.Pelayanan_activity" /> <!-- untuk mendapatkan token -->
+		<!-- <service android:name=".fcm.Notif"> -->
+		<!-- android:stopWithTask="false"> -->
+		<!-- <intent-filter> -->
+		<!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
+		<!-- </intent-filter> -->
+		<!-- </service> -->
+		<!-- setelah mendapatkan token, get notifikasi -->
 		<service android:name=".fcm.Notif">
 			<intent-filter>
 				<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
 			</intent-filter>
-		</service>
+		</service> <!-- ======================================================================== -->
 		<service
 			android:name=".fcm.NotifService"
 			android:enabled="true"

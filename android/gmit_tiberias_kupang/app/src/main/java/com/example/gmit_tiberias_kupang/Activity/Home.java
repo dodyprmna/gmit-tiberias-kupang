@@ -12,7 +12,7 @@ import com.example.gmit_tiberias_kupang.R;
 
 public class Home extends AppCompatActivity {
 
-    LinearLayout l_jadwal, l_info, l_liturigi, l_warta, l_artikel, l_kontak, l_renungan, l_admin;
+    LinearLayout l_jadwal, l_info, l_liturigi, l_warta, l_artikel, l_berita,l_kontak, l_renungan, l_admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,8 @@ public class Home extends AppCompatActivity {
         l_info=findViewById(R.id.l_info);
         l_liturigi=findViewById(R.id.l_liturigi);
         l_warta=findViewById(R.id.l_warta);
-        l_artikel=findViewById(R.id.l_artikel);
+		l_artikel=findViewById(R.id.l_artikel);
+		l_berita=findViewById(R.id.l_berita);
         l_kontak=findViewById(R.id.l_kontak);
         l_renungan=findViewById(R.id.l_renungan);
         l_admin=findViewById(R.id.l_admin);
@@ -56,6 +57,12 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Artikel_activity.class));
             }
         });
+		l_berita.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), Berita_activity.class));
+			}
+		});
         l_kontak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

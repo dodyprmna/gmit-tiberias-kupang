@@ -69,12 +69,18 @@ public class Pelayanan_activity extends AppCompatActivity {
 			for (int i = 0; i < result.length(); i++) {
 				JSONObject jo = result.getJSONObject(i);
 				String id_informasi_gereja = jo.getString(konfigurasi.TAG_ID_PELAYANAN);
+				String nama_gereja = jo.getString(konfigurasi.TAG_PELAYANAN_NAMA);
+				String alamat_gereja = jo.getString(konfigurasi.TAG_PELAYANAN_ALAMAT);
+				String tentang_kami = jo.getString(konfigurasi.TAG_PELAYANAN_TENTANG);
 				String pelayanan_gereja = jo.getString(konfigurasi.TAG_PELAYANAN);
 				String kontak = jo.getString(konfigurasi.TAG_KONTAK_PELAYANAN);
 
 
 				HashMap<String, String> pelayanan = new HashMap<>();
 				pelayanan.put(konfigurasi.TAG_ID_PELAYANAN, id_informasi_gereja);
+				pelayanan.put(konfigurasi.TAG_PELAYANAN_NAMA, nama_gereja);
+				pelayanan.put(konfigurasi.TAG_PELAYANAN_ALAMAT, alamat_gereja);
+				pelayanan.put(konfigurasi.TAG_PELAYANAN_TENTANG, tentang_kami);
 				pelayanan.put(konfigurasi.TAG_PELAYANAN, pelayanan_gereja);
 				pelayanan.put(konfigurasi.TAG_KONTAK_PELAYANAN, kontak);
 				list.add(pelayanan);
@@ -86,8 +92,20 @@ public class Pelayanan_activity extends AppCompatActivity {
 
 		ListAdapter adapter = new SimpleAdapter(
 				Pelayanan_activity.this, list, R.layout.item_pelayanan,
-				new String[]{konfigurasi.TAG_PELAYANAN, konfigurasi.TAG_KONTAK_PELAYANAN},
-				new int[]{R.id.pelayanan_gereja, R.id.kontak});
+				new String[]{
+						konfigurasi.TAG_PELAYANAN_NAMA,
+						konfigurasi.TAG_PELAYANAN_ALAMAT,
+						konfigurasi.TAG_PELAYANAN_TENTANG,
+						konfigurasi.TAG_PELAYANAN,
+						konfigurasi.TAG_KONTAK_PELAYANAN
+					},
+				new int[]{
+						R.id.nama_gereja,
+						R.id.alamat_gereja,
+						R.id.tentang_kami,
+						R.id.pelayanan_gereja,
+						R.id.kontak
+					});
 
 		listView.setAdapter(adapter);
 
