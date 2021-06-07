@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.setIndeterminate(false);
 		progressDialog.show();
-		String uRl = "http://192.168.0.20/gmit-tiberias-kupang/gmit/login.php";
+		String uRl = "http://192.168.0.28/gmit-tiberias-kupang/gmit/login.php";
 		StringRequest request = new StringRequest(Request.Method.POST, uRl, new Response.Listener<String>() {
 			@Override
 			public void onResponse(String response) {
