@@ -5,7 +5,8 @@
 	require_once('koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM berita";
+	// $sql = "SELECT * FROM berita";
+	$sql = "SELECT * FROM `berita` JOIN file_berita ON berita.id_berita=file_berita.id_berita";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -19,7 +20,8 @@
 		array_push($result,array(
 			"id_berita"=>$row['id_berita'],
 			"judul_berita"=>$row['judul_berita'],
-			"isi_berita"=>$row['isi_berita']
+			"isi_berita"=>$row['isi_berita'],
+			"nama_file"=>$row['nama_file']
 		));
 	}
 	

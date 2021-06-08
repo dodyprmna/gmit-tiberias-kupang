@@ -49,6 +49,7 @@ public class Artikel_activity extends AppCompatActivity {
 
     private String JSON_STRING;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

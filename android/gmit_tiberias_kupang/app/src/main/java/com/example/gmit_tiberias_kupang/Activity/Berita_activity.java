@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.VoiceInteractor;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.android.volley.Request;
@@ -43,12 +44,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.example.gmit_tiberias_kupang.R;
+import com.squareup.picasso.Picasso;
 
 public class Berita_activity extends AppCompatActivity {
 
 	private ListView listView;
 
 	private String JSON_STRING;
+	public ImageView mImageBerita;
+	private String imageurl="http://192.168.0.20/gmit-tiberias-kupang/uploads/berita/";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +75,18 @@ public class Berita_activity extends AppCompatActivity {
 				String id_berita = jo.getString(konfigurasi.TAG_ID_BERITA);
 				String judul_berita = jo.getString(konfigurasi.TAG_JUDUL_BERITA);
 				String isi_berita = jo.getString(konfigurasi.TAG_ISI_BERITA);
+//				String nama_file = jo.getString(konfigurasi.TAG_FILE_BERITA);
+
+
+
+
 
 
 				HashMap<String, String> berita = new HashMap<>();
 				berita.put(konfigurasi.TAG_ID_BERITA, id_berita);
 				berita.put(konfigurasi.TAG_JUDUL_BERITA, judul_berita);
 				berita.put(konfigurasi.TAG_ISI_BERITA, isi_berita);
+//				berita.put(konfigurasi.TAG_FILE_BERITA, nama_file);
 				list.add(berita);
 			}
 

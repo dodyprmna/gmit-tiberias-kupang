@@ -6,24 +6,25 @@ public class konfigurasi {
     //Pada tutorial Kali ini, karena kita membuat localhost maka alamatnya tertuju ke IP komputer
     //dimana File PHP tersebut berada
     //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
-    public static final String URL_GET_ALL = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_jadwal.php";
-    public static final String URL_GET_ALL_PENGUMUMAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_pengumuman.php";
-	public static final String URL_GET_ALL_LITURGI = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_liturgi.php";
-	public static final String URL_GET_ALL_WARTA = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_warta.php";
-	public static final String URL_GET_ALL_ARTIKEL = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_artikel.php";
-	public static final String URL_GET_ALL_BERITA = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_berita.php";
-    public static final String URL_ADD = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tambah_member.php";
-    public static final String URL_GET_LAPORAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_laporan.php";
-	public static final String URL_GET_ALL_INFO = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_pelayanan.php";
-	public static final String URL_GET_ALL_RENUNGAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_renungan.php";
-	public static final String URL_GET_ALL_BAPTISAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_baptisan.php";
-	public static final String URL_GET_DETAIL_BAPTISAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_detail_baptisan.php";
-	public static final String URL_ADD_BAPTISAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tambah_baptisan.php";
-	public static final String URL_GET_ALL_JEMAAT = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_jemaat.php";
-	public static final String URL_GET_ALL_PERKAWINAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_perkawinan.php";
-	public static final String URL_ADD_PERKAWINAN = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tambah_perkawinan.php";
-	public static final String URL_GET_ALL_TK = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tampil_tk.php";
-	public static final String URL_ADD_TK = "http://192.168.0.28/gmit-tiberias-kupang/gmit/tambah_tk.php";
+    public static final String URL_GET_ALL = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_jadwal.php";
+    public static final String URL_GET_ALL_PENGUMUMAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_pengumuman.php";
+	public static final String URL_GET_ALL_LITURGI = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_liturgi.php";
+	public static final String URL_GET_ALL_WARTA = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_warta.php";
+	public static final String URL_GET_ALL_ARTIKEL = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_artikel.php";
+	public static final String URL_GET_ALL_BERITA = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_berita.php";
+	public static final String URL_GET_GAMBAR_BERITA = "http://192.168.0.20/gmit-tiberias-kupang/uploads/berita/";
+    public static final String URL_ADD = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tambah_member.php";
+    public static final String URL_GET_LAPORAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_laporan.php";
+	public static final String URL_GET_ALL_INFO = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_pelayanan.php";
+	public static final String URL_GET_ALL_RENUNGAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_renungan.php";
+	public static final String URL_GET_ALL_BAPTISAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_baptisan.php";
+	public static final String URL_GET_DETAIL_BAPTISAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_detail_baptisan.php";
+	public static final String URL_ADD_BAPTISAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tambah_baptisan.php";
+	public static final String URL_GET_ALL_JEMAAT = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_jemaat.php";
+	public static final String URL_GET_ALL_PERKAWINAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_perkawinan.php";
+	public static final String URL_ADD_PERKAWINAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tambah_perkawinan.php";
+	public static final String URL_GET_ALL_TK = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_tk.php";
+	public static final String URL_ADD_TK = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tambah_tk.php";
 
 
     // JADWAL IBADAH ============================================
@@ -97,12 +98,14 @@ public class konfigurasi {
 	public static final String KEY_ID_BERITA = "id_berita";
 	public static final String KEY_JUDUL_BERITA = "judul_berita";
 	public static final String KEY_ISI_BERITA = "isi_berita";
+	public static final String KEY_FILE_BERITA = "nama_file";
 
 	//JSON Tags
 	public static final String TAG_JSON_ARRAY_BERITA ="result";
 	public static final String TAG_ID_BERITA = "id_berita";
 	public static final String TAG_JUDUL_BERITA = "judul_berita";
 	public static final String TAG_ISI_BERITA = "isi_berita";
+	public static final String TAG_FILE_BERITA = "nama_file";
 
     // MEMBER ============================================
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
