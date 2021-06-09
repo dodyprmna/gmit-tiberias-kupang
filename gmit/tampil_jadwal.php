@@ -5,7 +5,14 @@
 	require_once('koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM jadwal_ibadah";
+	$sql = "SELECT `id_jadwal`,
+				`id_kategori`, 
+				`nama_ibadah`,
+				IF(`jenis_ibadah`=0, 'Kebaktian Minggu Utama', 'Kategorial') AS jenis_ibadah, 
+				`tanggal`, 
+				`jam_mulai`, 
+				`jam_selesai` 
+			FROM `jadwal_ibadah`";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
