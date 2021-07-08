@@ -129,6 +129,7 @@ class Jemaat extends CI_Controller {
         $gereja         = $this->input->post('gereja');
         $rayon         = $this->input->post('rayon');
         $alamat         = $this->input->post('alamat');
+        $status         = $this->input->post('status');
         $role         = $this->input->post('role');
 
         $jemaat = $this->M_codeigniter->get_where('jemaat',array('email' => $email, 'id_jemaat !=' => $id ))->num_rows();
@@ -160,6 +161,7 @@ class Jemaat extends CI_Controller {
             'gereja_sebelumnya' => $gereja,
             'rayon'             => $rayon,
             'alamat'            => $alamat,
+            'status'            => $status,
             'role'              => $role,
         ); 
 

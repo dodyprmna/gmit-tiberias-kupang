@@ -50,6 +50,16 @@
 		</select>
 	</div>
 </div>
+<div class="col-md-4">
+	<div class="form-group">
+		<label>Status*</label>
+		<select name="status" class="form-control select22" data-placeholder="Pilih Status" required>
+			<option value=""></option>
+			<option value="0" <?= ($jemaat->status == 0) ? 'selected' : ''?>>Non Aktif</option>
+			<option value="1" <?= ($jemaat->status == 1) ? 'selected' : ''?>>Aktif</option>
+		</select>
+	</div>
+</div>
 
 <script>
 $(document).ready(function(){
