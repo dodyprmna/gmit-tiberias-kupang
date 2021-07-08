@@ -5,7 +5,13 @@
 	require_once('koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM jemaat";
+	// $sql = "SELECT * FROM jemaat";
+	$sql = "SELECT `id_jemaat`,
+					`nama`,`nik`,
+					`gereja_sebelumnya`,
+					`email`,`rayon`,
+					`alamat`, 
+			IF(`status`=1, 'Aktif', 'Tidak Aktif') AS status FROM `jemaat`";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);

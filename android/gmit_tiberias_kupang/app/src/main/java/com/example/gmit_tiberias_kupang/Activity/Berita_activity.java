@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.VoiceInteractor;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.android.volley.Request;
@@ -43,47 +44,50 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.example.gmit_tiberias_kupang.R;
+import com.squareup.picasso.Picasso;
 
-public class Pelayanan_activity extends AppCompatActivity {
+public class Berita_activity extends AppCompatActivity {
 
 	private ListView listView;
 
 	private String JSON_STRING;
+	public ImageView mImageBerita;
+	private String imageurl="http://192.168.0.20/gmit-tiberias-kupang/uploads/berita/";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pelayanan);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_berita);
 		listView = (ListView) findViewById(R.id.listView);
 //        listView.setOnItemClickListener(this);
 		getJSON();
-    }
+	}
 
-	private void showPelayanan() {
+	private void showBerita() {
 		JSONObject jsonObject = null;
 		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 		try {
 			jsonObject = new JSONObject(JSON_STRING);
-			JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY_PELAYANAN);
+			JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY_BERITA);
 
 			for (int i = 0; i < result.length(); i++) {
 				JSONObject jo = result.getJSONObject(i);
-				String id_informasi_gereja = jo.getString(konfigurasi.TAG_ID_PELAYANAN);
-				String nama_gereja = jo.getString(konfigurasi.TAG_PELAYANAN_NAMA);
-				String alamat_gereja = jo.getString(konfigurasi.TAG_PELAYANAN_ALAMAT);
-				String tentang_kami = jo.getString(konfigurasi.TAG_PELAYANAN_TENTANG);
-				String pelayanan_gereja = jo.getString(konfigurasi.TAG_PELAYANAN);
-				String kontak = jo.getString(konfigurasi.TAG_KONTAK_PELAYANAN);
+				String id_berita = jo.getString(konfigurasi.TAG_ID_BERITA);
+				String judul_berita = jo.getString(konfigurasi.TAG_JUDUL_BERITA);
+				String isi_berita = jo.getString(konfigurasi.TAG_ISI_BERITA);
+//				String nama_file = jo.getString(konfigurasi.TAG_FILE_BERITA);
 
 
-				HashMap<String, String> pelayanan = new HashMap<>();
-				pelayanan.put(konfigurasi.TAG_ID_PELAYANAN, id_informasi_gereja);
-				pelayanan.put(konfigurasi.TAG_PELAYANAN_NAMA, nama_gereja);
-				pelayanan.put(konfigurasi.TAG_PELAYANAN_ALAMAT, alamat_gereja);
-				pelayanan.put(konfigurasi.TAG_PELAYANAN_TENTANG, tentang_kami);
-				pelayanan.put(konfigurasi.TAG_PELAYANAN, pelayanan_gereja);
-				pelayanan.put(konfigurasi.TAG_KONTAK_PELAYANAN, kontak);
-				list.add(pelayanan);
+
+
+
+
+				HashMap<String, String> berita = new HashMap<>();
+				berita.put(konfigurasi.TAG_ID_BERITA, id_berita);
+				berita.put(konfigurasi.TAG_JUDUL_BERITA, judul_berita);
+				berita.put(konfigurasi.TAG_ISI_BERITA, isi_berita);
+//				berita.put(konfigurasi.TAG_FILE_BERITA, nama_file);
+				list.add(berita);
 			}
 
 		} catch (JSONException e) {
@@ -91,21 +95,15 @@ public class Pelayanan_activity extends AppCompatActivity {
 		}
 
 		ListAdapter adapter = new SimpleAdapter(
-				Pelayanan_activity.this, list, R.layout.item_pelayanan,
+				Berita_activity.this, list, R.layout.item_berita,
 				new String[]{
-						konfigurasi.TAG_PELAYANAN_NAMA,
-						konfigurasi.TAG_PELAYANAN_ALAMAT,
-						konfigurasi.TAG_PELAYANAN_TENTANG,
-						konfigurasi.TAG_PELAYANAN,
-						konfigurasi.TAG_KONTAK_PELAYANAN
-					},
+						konfigurasi.TAG_JUDUL_BERITA,
+						konfigurasi.TAG_ISI_BERITA
+				},
 				new int[]{
-						R.id.nama_gereja,
-						R.id.alamat_gereja,
-						R.id.tentang_kami,
-						R.id.pelayanan_gereja,
-						R.id.kontak
-					});
+						R.id.judul_berita,
+						R.id.isi_berita
+				});
 
 		listView.setAdapter(adapter);
 
@@ -119,7 +117,7 @@ public class Pelayanan_activity extends AppCompatActivity {
 			@Override
 			protected void onPreExecute() {
 				super.onPreExecute();
-				loading = ProgressDialog.show(Pelayanan_activity.this, "Mengambil Data", "Mohon Tunggu...", false, false);
+				loading = ProgressDialog.show(Berita_activity.this, "Mengambil Data", "Mohon Tunggu...", false, false);
 			}
 
 			@Override
@@ -127,13 +125,13 @@ public class Pelayanan_activity extends AppCompatActivity {
 				super.onPostExecute(s);
 				loading.dismiss();
 				JSON_STRING = s;
-				showPelayanan();
+				showBerita();
 			}
 
 			@Override
 			protected String doInBackground(Void... params) {
 				RequestHandler rh = new RequestHandler();
-				String s = rh.sendGetRequest(konfigurasi.URL_GET_ALL_INFO);
+				String s = rh.sendGetRequest(konfigurasi.URL_GET_ALL_BERITA);
 				return s;
 			}
 		}

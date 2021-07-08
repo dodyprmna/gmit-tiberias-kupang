@@ -18,6 +18,9 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
 			"id_informasi_gereja"=>$row['id_informasi_gereja'],
+			"nama_gereja"=>$row['nama_gereja'],
+			"alamat_gereja"=>$row['alamat_gereja'],
+			"tentang_kami"=>$row['tentang_kami'],
 			"pelayanan_gereja"=>$row['pelayanan_gereja'],
 			"kontak"=>$row['kontak'],
 		));

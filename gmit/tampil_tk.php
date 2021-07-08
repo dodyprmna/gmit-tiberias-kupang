@@ -5,7 +5,21 @@
 	require_once('koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * FROM registrasi_tk";
+	// $sql = "SELECT * FROM registrasi_tk";
+	$sql = "SELECT `id_registrasi`, 
+					`nama_lengkap`, 
+					`nik`, 
+					`alamat`, 
+					IF(`jenis_kelamin`='1', 'Laki-laki', 'Perempuan') AS jenis_kelamin, 
+					`tempat_lahir`, 
+					`tanggal_lahir`, 
+					`agama`, 
+					`kewarganegaraan`, 
+					`tinggal_bersama`, 
+					`anak_ke`, 
+					`usia`, 
+					`telepon` 
+			FROM `registrasi_tk`";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);

@@ -10,7 +10,9 @@ public class konfigurasi {
     public static final String URL_GET_ALL_PENGUMUMAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_pengumuman.php";
 	public static final String URL_GET_ALL_LITURGI = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_liturgi.php";
 	public static final String URL_GET_ALL_WARTA = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_warta.php";
-    public static final String URL_GET_ALL_ARTIKEL = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_artikel.php";
+	public static final String URL_GET_ALL_ARTIKEL = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_artikel.php";
+	public static final String URL_GET_ALL_BERITA = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_berita.php";
+	public static final String URL_GET_GAMBAR_BERITA = "http://192.168.0.20/gmit-tiberias-kupang/uploads/berita/";
     public static final String URL_ADD = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tambah_member.php";
     public static final String URL_GET_LAPORAN = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_laporan.php";
 	public static final String URL_GET_ALL_INFO = "http://192.168.0.20/gmit-tiberias-kupang/gmit/tampil_pelayanan.php";
@@ -91,6 +93,20 @@ public class konfigurasi {
     public static final String TAG_JUDUL_A = "judul_a";
     public static final String TAG_ISI_A = "isi_a";
 
+	// BERITA ============================================
+	//Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
+	public static final String KEY_ID_BERITA = "id_berita";
+	public static final String KEY_JUDUL_BERITA = "judul_berita";
+	public static final String KEY_ISI_BERITA = "isi_berita";
+	public static final String KEY_FILE_BERITA = "nama_file";
+
+	//JSON Tags
+	public static final String TAG_JSON_ARRAY_BERITA ="result";
+	public static final String TAG_ID_BERITA = "id_berita";
+	public static final String TAG_JUDUL_BERITA = "judul_berita";
+	public static final String TAG_ISI_BERITA = "isi_berita";
+	public static final String TAG_FILE_BERITA = "nama_file";
+
     // MEMBER ============================================
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
 //    public static final String KEY_ID_JEMAAT = "id_m";
@@ -127,12 +143,18 @@ public class konfigurasi {
 	// PELAYANAN ============================================
 	//Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
 	public static final String KEY_ID_PELAYANAN = "id_informasi_gereja";
+	public static final String KEY_PELAYANAN_NAMA = "nama_gereja";
+	public static final String KEY_PELAYANAN_ALAMAT = "alamat_gereja";
+	public static final String KEY_PELAYANAN_TENTANG = "tentang_kami";
 	public static final String KEY_PELAYANAN = "pelayanan_gereja";
 	public static final String KEY_KONTAK_PELAYANAN = "kontak";
 
 	//JSON Tags
 	public static final String TAG_JSON_ARRAY_PELAYANAN ="result";
 	public static final String TAG_ID_PELAYANAN = "id_informasi_gereja";
+	public static final String TAG_PELAYANAN_NAMA = "nama_gereja";
+	public static final String TAG_PELAYANAN_ALAMAT = "alamat_gereja";
+	public static final String TAG_PELAYANAN_TENTANG = "tentang_kami";
 	public static final String TAG_PELAYANAN = "pelayanan_gereja";
 	public static final String TAG_KONTAK_PELAYANAN = "kontak";
 

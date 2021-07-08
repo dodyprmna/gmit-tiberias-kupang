@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cv_berita"
+	style="@style/loginCard"
+	android:elevation="5dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardCornerRadius="@dimen/loginCardRadius">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:orientation="vertical"
+		android:padding="5dp">
+
+		<ImageView
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:layout_centerHorizontal="true"
+			android:padding="2dp"
+			android:src="@drawable/berita1"
+			android:id="@+id/img_berita"/>
+
+		<TextView
+			android:id="@+id/tv_judul_berita"
+			android:layout_below="@+id/img_berita"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Judul Berita : "
+			android:layout_marginTop="5dp"
+			android:textColor="#000"
+			android:fontFamily="@font/product_sans_regular"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/judul_berita"
+			android:layout_toRightOf="@id/tv_judul_berita"
+			android:layout_below="@+id/img_berita"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:fontFamily="@font/product_sans_regular"
+			android:text="judul_berita"
+			android:textColor="#000"
+			android:textSize="15dp" />
+
+		<TextView
+			android:id="@+id/tv_isi_berita"
+			android:layout_below="@+id/judul_berita"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Isi Berita : "
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+		<TextView
+			android:id="@+id/isi_berita"
+			android:layout_toRightOf="@id/tv_isi_berita"
+			android:layout_below="@+id/judul_berita"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="isi_berita"
+			android:fontFamily="@font/product_sans_regular"
+			android:layout_marginTop="5dp"/>
+
+
+
+
+	</RelativeLayout>
+
+</androidx.cardview.widget.CardView>
