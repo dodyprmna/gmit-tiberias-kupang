@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'us-cdbr-east-03.cleardb.com',
-	'username' => 'b18a970f5867bf',
-	'password' => '07aa310e',
-	'database' => 'heroku_6e5e46fdc42c001',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'Dell123.',
+	'database' => 'gmit_tiberias_kupang',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
